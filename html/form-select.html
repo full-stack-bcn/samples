@@ -3,11 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <title>Select</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      form {
+        border: 1px solid gray;
+        padding: .6em;
+      }
+      form p {
+        margin: 0;
+        margin-bottom: .5em;
+      }
+    </style>
   </head>
   <body>
-    <form action="/submit" method="get">
+    <h3>Selecció d'Universitat</h3>
+    <form action="/set-uni" method="get">
       <p>
-        <select name="uni">
+        <select name="uni" required>
+          <option value="">Selecciona una universitat:</option>
           <option value="ub">Universitat de Barcelona</option>
           <option value="uab">Universitat Autònoma de Barcelona</option>
           <option value="upc">Universitat Politècnica de Catalunya</option>
