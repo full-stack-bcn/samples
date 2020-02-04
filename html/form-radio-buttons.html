@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Radio Button Sample</title>
+  </head>
+  <body>
+    <form action="/choose" method="get">
+      Choose your favourite Musketeer:
+      <p><label><input type="radio" name="musketeer" value="athos"> Athos</label></p>
+      <p><label><input type="radio" name="musketeer" value="porthos"> Porthos</label></p>
+      <p><label><input type="radio" name="musketeer" value="aramis"> Aramis</label></p>
+    </form>
+    <div id="result"></div>
+
+    <script>
+      const form = document.forms[0];
+      const div = document.getElementById('result');
+
+      document.querySelectorAll('input').forEach(radio => {
+        radio.onclick = () => {
+          div.innerHTML = form.elements['musketeer'].value;
+        }
+      })
+    </script>
+  </body>
+</html>

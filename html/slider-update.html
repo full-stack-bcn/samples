@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slider update</title>
+  </head>
+  <body>
+    <input id="slider" type="range" min="0" max="100" step="5" value="0" />
+    <label id="label" for="slider">0</label>
+
+    <script>
+      const slider = document.getElementById('slider');
+      const update = () => {
+        document.getElementById('label').innerHTML = `${slider.value}`;
+      };
+      // oninput receives updates when dragging the slider
+      slider.oninput = update;
+      update();
+    </script>
+  </body>
+</html>
