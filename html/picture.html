@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Picture element</title>
+  </head>
+  <body>
+    <p>Resize the browser window to see changes in the image...</p>
+    <picture>
+      <source srcset="img/picture-big.png" media="(min-width: 1200px)">
+      <source srcset="img/picture-mid.png" media="(min-width: 600px)">
+      <img src="img/picture-small.png" alt="Some test picture" />
+    </picture>
+  </body>
+</html>
