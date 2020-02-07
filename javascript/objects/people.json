@@ -1,0 +1,43 @@
+[
+  {
+    "nombre": "Jorge",
+    "apellido": "Hernández",
+    "edad": 31
+  },
+  {
+    "nombre": "Carla",
+    "apellido": "Puentes",
+    "edad": 51,
+    "blas": true
+  },
+  {
+    "nombre": "Pedro",
+    "apellido": "García",
+    "edad": 33
+  },
+  {
+    "nombre": "José María",
+    "apellido": "Montoya",
+    "edad": 43
+  },
+  {
+    "nombre": "Pablo",
+    "apellido": "Méndez",
+    "edad": 21
+  },
+  {
+    "nombre": "James",
+    "apellido": "Bond",
+    "edad": 27
+  },
+  {
+    "nombre": "Marta",
+    "apellido": "Frisas",
+    "edad": 75
+  },
+  {
+    "nombre": "Sonsoles",
+    "apellido": "Arriaga",
+    "edad": 40
+  }
+]
