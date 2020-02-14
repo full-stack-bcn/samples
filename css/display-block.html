@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display block</title>
+    <style>
+      body {
+        padding: 1em;
+      }
+      span {
+        border: 1px solid red;
+        padding: .3em;
+      }
+      .block {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      This text has some <span><code>span</code></span> which is inline but
+      some
+      <span class="block">other "block" <code>span</code></span>
+      that is not.
+    </p>
+  </body>
+</html>
