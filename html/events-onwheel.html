@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnWheel Event</title>
+  <style>
+    #num {
+      font-size: 200%;
+    }
+  </style>
+
+</head>
+<body>
+  <p>Move the mouse wheel to change this number: <br><span id="num">0</span></p>
+  <script>
+    let n = 0;
+    const num = document.getElementById('num');
+    document.onwheel = (e) => {
+      n += e.wheelDeltaY;
+      num.innerText = `${n}`;
+    }
+  </script>
+  
+</body>
+</html>
