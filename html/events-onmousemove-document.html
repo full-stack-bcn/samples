@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnMouseMove Event in the Document</title>
+  <style>
+    body { padding: 1em; }
+    #coords { font-family: monospace; }
+  </style>
+</head>
+<body>
+  <p>
+    Move the mouse <br>
+    <span id="coords">(?, ?)</span>
+  </p>
+  <script>
+    const coords = document.getElementById('coords');
+    document.onmousemove = function (e) {
+      coords.innerText = `(${e.offsetX}, ${e.offsetY})`;
+    }
+  </script>
+</body>
+</html>
