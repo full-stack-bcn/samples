@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnMouseMove Event</title>
+  <style>
+    body {
+      padding: 30px;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      margin-right: 20px;
+      background-color: beige;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <p>Move the mouse over these rectangles:</p>
+  <div id="area1">
+    <span class="coords">?, ?</span>
+  </div>
+  <div id="area2" style="background-color: #ccf;">
+    <span class="coords">?, ?</span>
+  </div>
+  <script>
+    const coords1 = document.querySelector('#area1 .coords');
+    document.getElementById('area1').onmousemove = (e) => {
+      coords1.innerText = `${e.offsetX}, ${e.offsetY}`;
+    }
+    const coords2 = document.querySelector('#area2 .coords');
+    document.getElementById('area2').onmousemove = (e) => {
+      coords2.innerText = `${e.offsetX}, ${e.offsetY}`;
+    }
+    // How would you avoid repetition here?
+  </script>
+</body>
+</html>
