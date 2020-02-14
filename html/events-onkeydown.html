@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnKeyDown and OnKeyUp events</title>
+  <style>
+    #key {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 2em;
+      min-width: 1em;
+      padding-left: .5em;
+      padding-right: .5em;
+      border-radius: .2em;
+      border: 1px solid #aaa;
+      background-color: #ddd;
+    }
+    #key span {
+      font-family: monospace;
+      font-size: 140%;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Press any key and I will show you which.
+    <div id="key">
+      <span></span>
+    </div>
+  </p> 
+  <p hidden>
+    Some paragraph
+  </p>
+  <script>
+    const box = document.getElementById('key');
+    const key = document.querySelector('#key span');
+    document.onkeydown = (e) => {
+      e.preventDefault();
+      key.innerText = e.key;
+      box.style.display = 'inline-flex';
+    }
+    document.onkeyup = (e) => {
+      box.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
