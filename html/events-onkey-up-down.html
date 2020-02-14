@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OnKeyDown and OnKeyUp events</title>
-  <style>
-    #key {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      height: 2em;
-      min-width: 1em;
-      padding-left: .5em;
-      padding-right: .5em;
-      border-radius: .2em;
-      border: 1px solid #aaa;
-      background-color: #ddd;
-    }
-    #key span {
-      font-family: monospace;
-      font-size: 140%;
-    }
-  </style>
-</head>
-<body>
-  <p>
-    Press any key and I will show you which.
-    <div id="key">
-      <span></span>
-    </div>
-  </p> 
-  <p hidden>
-    Some paragraph
-  </p>
-  <script>
-    const box = document.getElementById('key');
-    const key = document.querySelector('#key span');
-    document.onkeydown = (e) => {
-      e.preventDefault();
-      key.innerText = e.key;
-      box.style.display = 'inline-flex';
-    }
-    document.onkeyup = (e) => {
-      box.style.display = 'none';
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnKeyDown and OnKeyUp events</title>
+    <style>
+      kbd {
+        background-color: #eee;
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+          0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+        color: #333;
+        display: inline-block;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 2px 4px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Press any key and I will show you which one it is: <kbd>?</kbd></p>
+    <script>
+      const key = document.querySelector("kbd");
+      document.onkeydown = e => {
+        e.preventDefault();
+        key.innerText = e.key;
+        key.style.display = "inline";
+      };
+      document.onkeyup = e => {
+        key.style.display = "none";
+      };
+    </script>
+  </body>
 </html>
