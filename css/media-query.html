@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media query</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 500px;
+        padding: 2em;
+        font-size: 2em;
+      }
+      .mobile {
+        display: none;
+        background-color: rgb(236, 70, 70);
+      }
+      .tablet {
+        display: none;
+        background-color: rgb(98, 198, 231);
+      }
+      .desktop {
+        display: none;
+        background-color: rgb(75, 240, 75);
+      }
+      @media screen and (max-width: 400px) {
+        .mobile {
+          display: block;
+        }
+      }
+      @media screen and (min-width: 401px) and (max-width: 800px) {
+        .tablet {
+          display: block;
+        }
+      }
+      @media screen and (min-width: 801px) {
+        .desktop {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile">
+      Mobile!
+    </div>
+    <div class="tablet">
+      Tablet!
+    </div>
+    <div class="desktop">
+      Desktop!
+    </div>
+  </body>
+</html>
