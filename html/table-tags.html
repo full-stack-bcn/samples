@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tag Table</title>
+  <style>
+    table {
+      text-align: left;
+      border-spacing: .5em;
+    }
+
+    th {
+      padding-top: 1em;
+    }
+
+    thead tr th {
+      border-bottom: 1px solid gray;
+      color: gray;
+    }
+
+    td {
+      vertical-align: top;
+      padding-right: 2em;
+    }
+
+    table caption {
+      font-variant: small-caps;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption>A table showing the main HTML tags</caption>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      <tr>
+        <th colspan="2">Structural Elements</th>
+      </tr>
+      <tr>
+        <td><code>&lt;html&gt;</code></td>
+        <td>Represents the root (top-level element) of an HTML document, so it is also referred to as the root element.
+          <br>
+          All other elements must be descendants of this element.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;head&gt;</code></td>
+        <td>Contains machine-readable information (metadata) about the document, like its title, scripts, and style
+          sheets.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;body&gt;</code></td>
+        <td>Represents the content of an HTML document. <br>
+          There can be only one <code>&lt;body&gt;</code> element in a document.</td>
+      </tr>
+
+
+      <tr>
+        <th colspan="2">Content sectioning</th>
+      </tr>
+      <tr>
+        <td><code>&lt;main&gt;</code></td>
+        <td>Dominant content of the <code>&lt;body&gt;</code> of a document.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;article&gt;</code></td>
+        <td>Self-contained composition in a document, page, application, or site.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;section&gt;</code></td>
+        <td>A standalone section &mdash; which doesn't have a more specific semantic element to represent it &mdash;
+          contained within an HTML document.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;header&gt;</code></td>
+        <td>Introductory content, typically a group of introductory or navigational aids.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;footer&gt;</code></td>
+        <td>Footer for its nearest sectioning content or sectioning root element.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;h1&gt;</code>&nbsp;&ndash;&nbsp;<code>&lt;h6&gt;</code></td>
+        <td>Headings of different levels.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;div&gt;</code></td>
+        <td>A generic marker for a section within a document.</td>
+      </tr>
+
+      <tr id="text-tags">
+        <th colspan="2">Text-level tags</th>
+      </tr>
+      <tr>
+        <td><code>&lt;p&gt;</code></td>
+        <td>A paragraph.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;br&gt;</code></td>
+        <td>A line break (empty tag).</td>
+      </tr>
+      <tr>
+        <td><code>&lt;em&gt;</code></td>
+        <td><em>Emphasized</em> text.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;strong&gt;</code></td>
+        <td><strong>Strong</strong> text.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;code&gt;</code></td>
+        <td>Text that looks like <code>computer code</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;pre&gt;</code></td>
+        <td>A pre-formatted text (appears verbatim, including space).</td>
+      </tr>
+      <tr>
+        <td><code>&lt;a&gt;</code></td>
+        <td>A <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">hypertext link</a>
+          to another page (or <a href="#tables">another place</a> in the current page).</td>
+      </tr>
+      <tr>
+        <td><code>&lt;span&gt;</code></td>
+        <td>A generic marker for a piece of text within a paragraph.</td>
+      </tr>
+
+      <tr id="text-tags">
+        <th colspan="2">Lists</th>
+      </tr>
+      <tr>
+        <td><code>&lt;ol&gt;</code></td>
+        <td>An ordered list (shown with numbers).</td>
+      </tr>
+      <tr>
+        <td><code>&lt;ul&gt;</code></td>
+        <td>An unordered list (shown with bullets).</td>
+      </tr>
+      <tr>
+        <td><code>&lt;li&gt;</code></td>
+        <td>An list item.</td>
+      </tr>
+
+      <tr id="tables">
+        <th colspan="2">Tables</th>
+      </tr>
+      <tr>
+        <td><code>&lt;table&gt;</code></td>
+        <td>A table.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;tr&gt;</code></td>
+        <td>A <strong>t</strong>able <strong>r</strong>ow.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;td&gt;</code></td>
+        <td>An <strong>t</strong>able <strong>d</strong>ata cell.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;th&gt;</code></td>
+        <td>An <strong>t</strong>able <strong>h</strong>eader cell.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;thead&gt;</code></td>
+        <td>A group of rows representing the heading of the table.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;tbody&gt;</code></td>
+        <td>A group of rows representing the body of the table.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;tfoot&gt;</code></td>
+        <td>A group of rows representing the footer of the table.</td>
+      </tr>
+      <tr>
+        <td><code>&lt;caption&gt;</code></td>
+        <td>A description of the table (shown at the top).</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
