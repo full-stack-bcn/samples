@@ -1,13 +1,9 @@
 
-const { log, error } = console;
+const { log } = console;
 const fs = require('fs');
 const path = require('path');
 
-// fs.readdir
-// fs.stat -> .isDirectory
-// path.join
-
-const walk = (dir, func) => {
+const walkDir = (dir, func) => {
    fs.readdir(dir, (err, files) => {
       if (err) throw err;
       files.forEach((file) => {
@@ -15,7 +11,7 @@ const walk = (dir, func) => {
          fs.stat(fullpath, (err, stats) => {
             if (err) throw err;
             if (stats.isDirectory()) {
-               walk(fullpath, func);
+               walkDir(fullpath, func);
             } else {
                func(dir, file, stats);
             }
@@ -24,6 +20,17 @@ const walk = (dir, func) => {
    })
 }
 
-walk('/home/pauek/src/bash', (dir, file, stats) => {
+const walkDirSync = (dir, fn) => {
+  fs.readdirSync(dir).forEach(file => {
+    let dirPath = path.join(dir, file);
+    if (fs.statSync(dirPath).isDirectory()) {
+      walkDirSync(dirPath, fn);
+    } else {
+      fn(path.join(dir, file));
+    }
+  });
+};
+
+walkDir('.', (dir, file, stats) => {
    log(dir + "/" + file, stats.size);
 });
