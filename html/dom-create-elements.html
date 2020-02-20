@@ -11,7 +11,7 @@
   <script>
     const main = document.querySelector('main');
     var h1 = document.createElement('h1');
-    h1.innerText = 'This is a made-up title';
+    h1.innerText = 'This is a generated title';
     main.appendChild(h1);
 
     var p = document.createElement('p');
@@ -20,18 +20,32 @@
       "libero rem a maxime magni cum tempore fuga commodi est quia.";
     main.appendChild(p);
 
-    var div = document.createElement('div');
-    div.append('This is a div ');
-
     var span = document.createElement('span');
-    span.className = "special";
     span.innerText = "with some special text";
+    span.className = "special";
     span.style.backgroundColor = "yellow";
     span.style.border ="1px solid red";
-    div.append(span);
 
-    div.append(' inside');
+    var div = document.createElement('div');
+    div.append('This is a div ', span, ' inside');
     main.appendChild(div);
+
+    var section = document.createElement('section');
+    section.innerHTML = "<p>This section has a paragraph with <em>emphasized</em> text.</p>";
+    main.appendChild(section);
+
+    var table = document.createElement('table');
+    table.style.border = "1px solid black";
+    table.style.textAlign = "left";
+    var thead = document.createElement('tr');
+    thead.innerHTML = `<th>N</th><th>Text</th>`;
+    table.appendChild(thead);
+    for (let i = 0; i < 20; i++) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${i+1}</td><td>This is a generated row</td>`;
+      table.appendChild(tr);
+    }
+    main.appendChild(table);
   </script>
 </body>
 </html>
