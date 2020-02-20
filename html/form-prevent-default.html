@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Form Prevent Default Submit Event</title>
+    <style>
+      form {
+        border: 1px solid black;
+        padding-left: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/submit" method="get">
+      <p><input type="text" size="20" value="unimportant text" name="text"></p>
+      <p><input type="submit"></p>
+    </form>
+    <script>
+      const form = document.forms[0];
+      form.addEventListener('submit', (event) => {
+        // Try to comment this line to see how the form is sent
+        event.preventDefault();
+        console.log("Stopped the form!");
+      })
+    </script>
+  </body>
+</html>
