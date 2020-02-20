@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM createElement</title>
+</head>
+<body>
+  <!-- This page will be filled later with elements created from Javascript! -->
+  <main>
+  </main>
+  <script>
+    const main = document.querySelector('main');
+    var h1 = document.createElement('h1');
+    h1.innerText = 'This is a made-up title';
+    main.appendChild(h1);
+
+    var p = document.createElement('p');
+    p.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. " +
+      "Nulla sint error, esse accusantium, sapiente atque at sed cumque natus " + 
+      "libero rem a maxime magni cum tempore fuga commodi est quia.";
+    main.appendChild(p);
+
+    var div = document.createElement('div');
+    div.append('This is a div ');
+
+    var span = document.createElement('span');
+    span.className = "special";
+    span.innerText = "with some special text";
+    span.style.backgroundColor = "yellow";
+    span.style.border ="1px solid red";
+    div.append(span);
+
+    div.append(' inside');
+    main.appendChild(div);
+  </script>
+</body>
+</html>
