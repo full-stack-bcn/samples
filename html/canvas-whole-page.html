@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Whole Page Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas />
+    <script>
+      const canvas = document.querySelector("canvas");
+
+      const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      const paintCorners = () => {
+        const H = canvas.height;
+        const W = canvas.width;
+
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(0, 0, 50, 50);
+        ctx.fillRect(0, H - 50, 50, 50);
+        ctx.fillRect(W - 50, 0, 50, 50);
+        ctx.fillRect(W - 50, H - 50, 50, 50);
+      }
+
+      const update = () => {
+        resize();
+        paintCorners();
+      }
+
+      update();
+
+      // Resize the canvas and repaint every time the window resizes
+      window.addEventListener('resize', update);
+    </script>
+  </body>
+</html>
