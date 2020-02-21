@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Demo</title>
+    <style>
+      canvas {
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas />
+    <script>
+      // Get the canvas element, change its size.
+      // The size is changed here because CSS will "stretch" the pixels...
+      const canvas = document.querySelector("canvas");
+      canvas.width = 480;
+      canvas.height = 480;
+
+      // Get the 2D context first
+      const ctx = canvas.getContext("2d");
+
+      // Draw a red/black chessboard
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          ctx.fillStyle = (i + j) % 2 ? "red" : "black";
+          ctx.fillRect(0 + i * 60, 0 + j * 60, 60, 60);
+        }
+      }
+
+      // Paint some text
+      ctx.fillStyle = "white";
+      ctx.font = "60px monospace";
+      const text = "<canvas>!";
+      let { 
+        width, 
+        actualBoundingBoxAscent: height 
+      } = ctx.measureText(text);
+      ctx.fillText(text, 240 - width / 2, 240 + height / 2);
+    </script>
+  </body>
+</html>
