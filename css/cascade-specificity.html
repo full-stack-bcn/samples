@@ -5,92 +5,21 @@
     <title>CSS Cascade Specificity Example</title>
     <style>
       body {
-        width: 40em;
-        margin: auto;
-        padding: 0;
         font-family: sans-serif;
       }
       p {
-        margin: 0.5em 0.2em;
-        line-height: 1.5em;
-      }
-      h4 {
-        margin-top: 0.1em;
-      }
-      header {
-        border: 1px solid #ccc;
-        padding: 0 1em;
-        margin-bottom: 1em;
-        border-radius: 5px;
-        font-style: italic;
-        background-color: rgb(255, 255, 196);
-        box-shadow: 1px 2px 3px #ccc;
-        margin: 0.5em;
-        margin-bottom: 2em;
-      }
-      section {
         background-color: white;
-        border: 1px solid rgb(219, 243, 250);
-        padding: 1em;
-        margin-bottom: 1em;
       }
-      section.overview {
-        background-color: rgb(226, 240, 246);
-      }
-      footer {
-        border-top: 1px solid #ccc;
-        margin-top: 2em;
-        padding-top: 1em;
-      }
-      footer p {
-        background-color: #eee;
+      p.special {
         font-family: serif;
-        padding: 1em 1.2em;
+        background-color: lightgreen;
+        padding: 1em;
       }
     </style>
   </head>
   <body>
-    <article>
-      <header>
-        <p>
-          Open the Inspector and observe the order of the styles in the
-          <code>&lt;section&gt;</code> below, and which of those appear crossed
-          by a line.
-        </p>
-      </header>
-      <section class="overview">
-        <h4>This is the overview <code>&lt;section&gt;</code>.</h4>
-        <p>
-          It appears in blue because a style for it is more specific than the
-          normal style of sections which is a white background. <br />
-          <span class="note"
-            >Open the inspector and check how the white background is crossed
-            because it is less specific and it appears below in the style
-            order.</span
-          >
-        </p>
-      </section>
-      <section class="normal">
-        <h4>The second <code>&lt;section&gt;</code></h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sint,
-          aspernatur qui illum quia ipsum optio quam consequuntur, doloribus
-          iure explicabo beatae voluptate? Beatae quos, vero aliquam repellat
-          rem labore?
-        </p>
-      </section>
-      <footer>
-        <h4>
-          This is the <strong><code>&lt;footer&gt;</code></strong>
-        </h4>
-        <p>
-          The footer <code>&lt;p&gt;</code> appears in gray and a
-          <code>serif</code> font because the style for this paragraph is more
-          specific than the general style. Look for the crossed
-          <code>font-family</code> which was in effect for the whole
-          <code>body</code> of the document.
-        </p>
-      </footer>
-    </article>
+    <p class="special" style="padding: 1.2em">
+      Inspect this element's styles
+    </p>
   </body>
 </html>
