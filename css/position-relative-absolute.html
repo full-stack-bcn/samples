@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position "Absolute" Demo</title>
+    <style>
+      .container {
+        position: relative; /* <----- */
+        width: 400px;
+        padding: 0.7em 1em;
+        font-family: sans-serif;
+        border: 1px dashed #ddd;
+      }
+      .container p {
+        margin: 0;
+        line-height: 1.2;
+        font-style: italic;
+        font-family: serif;
+      }
+      .container div {
+        position: absolute; /* <----- */
+        font-weight: bold;
+        font-size: 90%;
+        padding: 0.2em 0.3em;
+      }
+      .bottom {
+        bottom: 0;
+      }
+      .top {
+        top: 0;
+      }
+      .left {
+        left: 0;
+        background-color: rgba(152, 184, 255, .6);
+      }
+      .right {
+        right: 0;
+        background-color: rgba(255, 228, 194, .6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam veritatis
+        harum sit nisi accusamus fuga, quos minus placeat dolores molestias
+        similique, odio provident molestiae ullam beatae soluta architecto, quis
+        eveniet. Inventore voluptates itaque quo molestiae quae voluptatem
+        blanditiis eligendi ullam ipsum ut quos reprehenderit modi placeat
+        possimus provident, hic quia corrupti debitis.
+      </p>
+      <div class="bottom left">Bottom + Left</div>
+      <div class="top right">Top + Right</div>
+    </div>
+  </body>
+</html>
