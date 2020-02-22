@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed position demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    div {
+      background-color: rgb(217, 245, 255);
+      padding: 2em;
+      margin-bottom: 1px;
+    }
+    nav, footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      padding: 1em;
+    }
+    nav {
+      background-color: black;
+      color: white;
+      padding: .5em .8em;
+    }
+    footer {
+      bottom: 0;
+      background-color: rgb(255, 241, 162);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    Nav!
+  </nav>
+  <div>Div 1: The <code>&lt;nav&gt;</code> is actually on top of this div...</div>
+  <div>Div 2</div>
+  <footer>
+    The footer is down here!
+  </footer>
+</body>
+</html>
