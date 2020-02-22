@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not First Child sample</title>
+    <style>
+      body {
+        width: 35em;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      h1:not(:first-child),
+      h2:not(:first-child) {
+        margin-top: 3rem; /* <----- More separation for non first titles */
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>This is the first (big) title</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam similique
+        repellendus, neque laborum dolorem aspernatur consequuntur delectus
+        adipisci. Dignissimos atque expedita ab voluptate quia recusandae
+        assumenda aspernatur molestiae ex aut?
+      </p>
+      <h2>This is the second title</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus esse
+        consequatur accusamus iure eum dolore omnis illo nihil ex unde
+        voluptate, quia sint, asperiores non, quod quis quo voluptatum?
+        Consectetur.
+      </p>
+      <h2>This is the third title</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem nam animi,
+        nulla laboriosam tempora saepe atque est aut! Tenetur quae, enim
+        inventore officiis commodi eius sed illum pariatur repellendus in?
+      </p>
+      <h1>Another big title</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam in, iure
+        at atque hic ut minus totam! Perspiciatis illo obcaecati tempore aut
+        animi iure earum consequuntur dignissimos similique at. Voluptatibus.
+      </p>
+    </article>
+  </body>
+</html>
