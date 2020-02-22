@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Navigation Bar</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(56, 14, 133);
+        color: white;
+        display: flex; /* <----- */
+        flex-direction: row; /* <----- */
+        align-items: center; /* <----- */
+      }
+      nav div a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 1em 1em;
+      }
+      nav div a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      #logo {
+        flex: 1; /* <----- */
+        font-weight: 700;
+      }
+      #logo a {
+        display: inline;
+      }
+      #logo a:hover {
+        background: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="logo"><a href="/">Logo Here</a></div>
+      <div><a href="/about">About</a></div>
+      <div><a href="/contact">Contact</a></div>
+      <div><a href="/login">Login</a></div>
+    </nav>
+  </body>
+</html>
