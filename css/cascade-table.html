@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Cascade Table</title>
+    <style>
+      body {
+        padding: 0.6em;
+        font-family: sans-serif;
+        color: #444;
+      }
+      * {
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      table {
+        text-align: left;
+        border-spacing: 0;
+      }
+      th {
+        font-size: 18px;
+        padding: 15px 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ccc;
+      }
+      td {
+        padding: 0.8em 0.8em;
+        border-bottom: 1px solid #eee;
+      }
+      tr:nth-child(2n) {
+        background-color: #f8f8f8;
+      }
+      code {
+        background: rgba(0, 0, 0, 0.06);
+        padding: 0.28em 0.45em;
+        border-radius: 0.3em;
+        color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Selector</th>
+          <th>Example</th>
+          <th>Specificity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Type selector</td>
+          <td><code>h1</code></td>
+          <td><code>0 0 0 1</code></td>
+        </tr>
+        <tr>
+          <td>Class, attribute selectors</td>
+          <td>
+            <code>.class</code>,
+            <code>[type="text"]</code>
+          </td>
+          <td><code>0 0 1 0</code></td>
+        </tr>
+        <tr>
+          <td>ID selector</td>
+          <td><code>#contact</code></td>
+          <td><code>0 1 0 0</code></td>
+        </tr>
+        <tr>
+          <td>Inline style</td>
+          <td>
+            <code>&lt;div style="background: purple"&gt;</code>
+          </td>
+          <td><code>1 0 0 0</code></td>
+        </tr>
+        <tr>
+          <td><code>!important</code> keyword</td>
+          <td>
+            <code>div { color: green !important }</code>
+          </td>
+          <td>Overrides all</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
