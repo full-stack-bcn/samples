@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Cascade Specificity Example</title>
+    <style>
+      p {
+        width: 18em;
+        box-sizing: border-box;
+      }
+      .lorem {
+        font-style: italic;
+        color: gray;
+      }
+      .note {
+        background-color: rgb(64, 194, 199);
+        font-family: sans-serif;
+        color: white;
+        padding: .3em .5em;
+        line-height: 3;
+        font-size: 80%;
+        border-radius: .3em;
+      }
+      article section p {
+        width: 35em;
+      }
+      section.quote p {
+        padding: 1.5em 3em;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <section>
+        <p>
+          Paragraph inside a section of the article.
+          <span class="lorem"
+            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique
+            delectus obcaecati pariatur itaque illum, omnis quia qui cumque
+            totam aliquid vero impedit voluptatibus dignissimos quis
+            exercitationem, in labore praesentium consectetur!</span
+          >
+        </p>
+      </section>
+      <section class="quote">
+        <p>
+          This paragraph is a "quote".
+          <span class="lorem"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur odio sit veritatis perferendis nesciunt ullam
+            accusantium optio, adipisci nihil unde molestiae, officiis rerum
+            ducimus magnam, corporis fugit doloribus rem facilis.</span
+          ><br >
+          <span class="note">Inspect the styles of this paragraph.</span>
+        </p>
+      </section>
+    </article>
+    <p>
+      Paragraph outside the article.
+      <span class="lorem"
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod totam
+        ullam, praesentium deserunt reiciendis esse at eos impedit porro
+        incidunt ex atque cumque cum tempora minus nesciunt, laboriosam earum
+        nulla.</span
+      >
+    </p>
+  </body>
+</html>
