@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Sizing "border-box"</title>
+    <style>
+      p {
+        border: 1px solid gray;
+        width: 20em;
+        padding: 3em;
+      }
+      p.boxsizing {
+        margin-left: 3em;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      This paragraph has a width of <code>20em</code>, which means that the
+      <strong>text</strong> has a width of <code>20em</code>. The padding is
+      <em>added</em> to the <code>20em</code>.
+    </p>
+    <p class="boxsizing">
+      This paragraph has a width of <code>20em</code>, but having the property
+      "<code>box-sizing: border-box;</code>" the width is calculated using the
+      <strong>outside box</strong> (including the padding), so the padding is
+      counts towards the <code>20em</code>.
+    </p>
+  </body>
+</html>
