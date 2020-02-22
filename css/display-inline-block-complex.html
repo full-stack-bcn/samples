@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display inline-block</title>
+    <style>
+      body {
+        padding: 1em;
+      }
+      div {
+        display: inline-block; 
+        border: 1px solid gray;
+        padding: .3em;
+      }
+      div.square {
+        width: 100px;
+        height: 40px;
+        background-color: rgb(255, 174, 174);
+        border: none;
+      }
+      div p {
+        margin: 0;
+      }
+      code {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    This 3 divs are <code>inline-block:</code>
+    <div>
+      <p>1 <code>&lt;p&gt;</code></p>
+      <div class="square">B</div>
+    </div>
+    <div>
+      2
+    </div>
+    <div>
+      <p>3 (1st <code>&lt;p&gt;</code>)</p>
+      <p>3 (2nd <code>&lt;p&gt;</code>)</p>
+    </div>
+    <p>A paragraph after...</p>
+  </body>
+</html>
