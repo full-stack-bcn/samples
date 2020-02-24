@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: Background Sample</title>
+
+  <style>
+    body {
+      font-size: 1.5rem;
+    }
+    #first {
+      color: white;
+      padding: 1em;
+      margin: 1em;
+      width: 20em;
+      /* separated properties */
+      background-color: rgb(124, 0, 0);
+      background-image: url(img/checker.svg);
+      background-position: 0 0;
+      background-repeat: repeat;
+      background-attachment: local; 
+      background-origin: content-box;
+      background-clip: border-box;
+    }
+    .lorem {
+      font-style: italic;
+      color: #bbb;
+    }
+  </style>
+
+</head>
+<body>
+  <p id="first">
+    This paragraph has a special background.
+    <span class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Quis minima recusandae dolore minus, hic repellendus magni tempora
+    dignissimos in distinctio voluptatibus quisquam inventore numquam ea
+    reprehenderit laborum earum? Natus, enim.</span>
+  </p>
+</body>
+</html>
