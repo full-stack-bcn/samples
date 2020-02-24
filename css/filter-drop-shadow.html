@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: Drop shadow filter example</title>
+
+  <style>
+    body {
+      font-size: 1.6rem;
+    }
+    p.shadow1 {
+      filter: drop-shadow(1px 1px);
+    }
+    p.shadow2 {
+      filter: drop-shadow(3px 3px 1.5px);
+    }
+    p.shadow3 {
+      filter: drop-shadow(-5px 5px 3px blue);
+    }
+  </style>
+
+</head>
+<body>
+  <p>This paragraph is normal.</p>
+  <p class="shadow1">This paragraph has a shadow.</p>
+  <p class="shadow2">This paragraph has a different shadow.</p>
+  <p class="shadow3">This paragraph has a very different shadow.</p>
+</body>
+</html>
