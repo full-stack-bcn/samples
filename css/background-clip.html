@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: background-clip example</title>
+
+  <style>
+    p {
+      background: #bbb;
+      width: 30em;
+      padding: .8em;
+      position: relative;
+      border: 6px dashed #ccf;
+    }
+    p[id] code {
+      font-weight: 700;
+      position: absolute;
+      padding: .3em .7em;
+      bottom: 0;
+      right: 0;
+      border: 1px solid gray;
+      background-color: white;
+      border-radius: 1em;
+      margin: 3px;
+    }
+    #border-box { background-clip: border-box; }
+    #padding-box { background-clip: padding-box; }
+    #content-box { background-clip: content-box; }
+  </style>
+
+</head>
+<body>
+  <h1>Different values of <code>background-clip</code></h1>
+  <p id="border-box">
+    <code>border-box</code>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quas laborum
+    dignissimos nostrum impedit inventore assumenda sed deleniti obcaecati
+    laboriosam harum ipsa quod, perspiciatis sint voluptatibus adipisci minima
+    aspernatur praesentium!
+  </p>
+  <p id="padding-box">
+    <code>padding-box</code>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia maiores
+    dolorem fugiat sapiente eos exercitationem pariatur vitae ad molestiae
+    consequatur? Mollitia alias natus incidunt impedit! Quasi aspernatur alias
+    voluptatum esse!
+  </p>
+  <p id="content-box">
+    <code>content-box</code>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nisi
+    a eum suscipit repellat quidem! Assumenda aliquid neque voluptates
+    laudantium ullam error soluta, beatae possimus maiores molestiae eaque, a
+    adipisci.
+  </p>
+</body>
+</html>
