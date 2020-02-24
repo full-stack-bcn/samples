@@ -5,20 +5,54 @@
     <title>CSS: Flex wrap sample</title>
 
     <style>
-      .wrap {
-        display: flex;
-        flex-wrap: wrap;
+      body {
+        padding: 1em;
+        width: 42em;
+        background-color: #eef;
       }
-      .wrap div {
-        font-size: 1.5rem;
-        padding: 2.5em;
+      body > div {
+        display: flex;
+        margin-bottom: 2em;
+        border: 3px solid orange;
+      }
+      h3 {
+        margin-bottom: 0.5em;
+      }
+      div div {
+        background-color: rgba(255, 255, 255, 0.85);
+        font-size: 1.2rem;
+        padding: 1.5em;
         border: 1px solid gray;
         margin: 0.1em;
+      }
+      .wrap {
+        flex-wrap: wrap; /* <------ */
+      }      
+      .no-wrap {
+        flex-wrap: no-wrap; /* <------ */
       }
     </style>
   </head>
   <body>
+    <h3><code>Wrap</code></h3>
     <div class="wrap">
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
+      <div>Fourth</div>
+      <div>Fifth</div>
+      <div>Sixth</div>
+      <div>Seventh</div>
+      <div>Eighth</div>
+      <div>Nineth</div>
+      <div>Tenth</div>
+      <div>Eleventh</div>
+      <div>Twelveth</div>
+      <div>Thirteenth</div>
+      <div>Fourteenth</div>
+    </div>
+    <h3><code>no-wrap</code></h3>
+    <div class="no-wrap">
       <div>First</div>
       <div>Second</div>
       <div>Third</div>
