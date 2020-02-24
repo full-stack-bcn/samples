@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS: Pixels vs Rem</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        line-height: 1.4;
+      }
+      .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .wrapper > * {
+        margin: 1rem;
+      }
+      .header {
+        margin-bottom: 1rem;
+      }
+      .main {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+      section {
+        font-size: 1rem;
+        padding: 1rem;
+        border: 0.0625em solid darkmagenta;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+      h2 {
+        font-weight: 700;
+      }
+      p {
+        margin-top: 1rem;
+      }
+      pre {
+        font-weight: 700;
+        background-color: #e6dbff;
+        padding: 0 0.125rem;
+      }
+      .pxFont h2 {
+        font-size: 24px;
+      }
+      .pxFont p {
+        font-size: 16px;
+      }
+      .remFont h2 {
+        font-size: 1.5rem;
+      }
+      .remFont p {
+        font-size: 1rem;
+      }
+      .pxLineHeight h2 {
+        line-height: 40px;
+      }
+      .pxLineHeight p {
+        line-height: 24px;
+      }
+      .remLineHeight h2 {
+        line-height: 1.25rem;
+      }
+      .remLineHeight p {
+        line-height: 1.5rem;
+      }
+      .unitlessLineHeight h2 {
+        line-height: 1.25;
+      }
+      .unitlessLineHeight p {
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Pixels vs Rem (Relative)</h1>
+        <p style="font-style: italic;">Change the font size of pages in the Browser's configuration to very small or very large</p>
+      </header>
+      <main class="main">
+        <section class="pxFont pxLineHeight">
+          <h2>Heading px</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
+            blanditiis odio recusandae porro exercitationem hic cupiditate culpa
+            alias quaerat? Consectetur delectus voluptatibus iste recusandae
+            iure inventore modi nemo explicabo id.
+          </p>
+          <p>
+            These paragraphs are using:
+            <pre>font-size: 16px;
+line-height: 24px;</pre>
+          </p>
+        </section>
+
+        <section class="remFont pxLineHeight">
+          <h2>Heading rem</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam
+            necessitatibus inventore cumque velit, aperiam aliquid repellat
+            alias nihil officia quaerat minima expedita dignissimos eum, id
+            similique reprehenderit aliquam quas totam?
+          </p>
+          <p>
+            These paragraphs are using:
+            <pre>font-size: 1rem;
+line-height: 24px;</pre>
+          </p>
+        </section>
+
+        <section class="remFont unitlessLineHeight">
+          <h2>Heading rem</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            placeat nobis ipsum, veritatis hic voluptate rerum cumque doloribus
+            autem voluptatum eum corporis in sed minima voluptatibus alias
+            repellat dolorum velit?
+          </p>
+          <p>
+            These paragraphs are using:
+            <pre>font-size: 1rem;
+line-height: 1.5;</pre>
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
