@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS: Flex columns</title>
+
+    <style>
+      .column,
+      .row {
+        display: flex;
+        border: 1px solid black;
+        justify-content: start;
+        align-items: center;
+      }
+      div div {
+        padding: 0.3em;
+        border: 1px solid #ccc;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .row {
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column">
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
+      <div>Fourth</div>
+      <div>Fifth</div>
+    </div>
+    <div class="row">
+      <div>First</div>
+      <div>Second</div>
+      <div>Third</div>
+      <div>Fourth</div>
+      <div>Fifth</div>
+    </div>
+  </body>
+</html>
