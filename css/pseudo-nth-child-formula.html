@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: Pseudo-classes "first child" selector demo</title>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+    section {
+      width: 15em;
+      margin-right: 2em;
+    }
+    ul {
+      padding-left: 1em;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+
+    /* 
+       :nth-child(<formula using 'n'>) 
+    */
+    ul.a li:nth-child(2n) {
+      background-color: yellow;
+    }
+    ul.b li:nth-child(2n+1) {
+      background-color: yellow;
+    }
+    ul.c li:nth-child(3n+2) {
+      background-color: yellow;
+    }
+    ul.d li:nth-child(n+5) {
+      background-color: yellow;
+    }
+  </style>
+
+</head>
+
+<body>
+  <section>
+    <h2><code>2n</code></h2>
+    <ul class="a">
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+      <li>Sixth</li>
+      <li>Seventh</li>
+      <li>Eighth</li>
+      <li>Nineth</li>
+      <li>Tenth</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><code>2n+1</code></h2>
+    <ul class="b">
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+      <li>Sixth</li>
+      <li>Seventh</li>
+      <li>Eighth</li>
+      <li>Nineth</li>
+      <li>Tenth</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><code>3n+2</code></h2>
+    <ul class="c">
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+      <li>Sixth</li>
+      <li>Seventh</li>
+      <li>Eighth</li>
+      <li>Nineth</li>
+      <li>Tenth</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><code>n+5</code></h2>
+    <ul class="d">
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+      <li>Sixth</li>
+      <li>Seventh</li>
+      <li>Eighth</li>
+      <li>Nineth</li>
+      <li>Tenth</li>
+    </ul>
+  </section>
+</body>
+
+</html>
