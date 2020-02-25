@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: Pseudo ':not' class sample</title>
+
+  <style>
+    body {
+      font-size: 1.3rem;
+      width: 40rem;
+      padding: 1.2rem;
+    }
+    *:not(li) > a {
+      color: green;
+    }
+  </style>
+
+</head>
+<body>
+  <p>Links in this paragraph have different styles: the ones in list items don't
+  have special style, the ones <em>not</em> in the list do (have green color).
+  </p>
+  A <a href="/">link</a> to test the CSS...
+  <ul>
+    <li>This is a normal item.</li>
+    <li>This is an item <a href="/">with a link</a>, inside the list.</li>
+    <li>Another normal item.</li>
+  </ul>
+  <a href="/">A link outside the list</a>.
+</body>
+</html>
