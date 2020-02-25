@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: An important rule overriding inline styles</title>
+
+  <style>
+    body {
+      font-size: 1.2rem;
+      width: 25em;
+      padding: 1rem;
+      line-height: 1.4;
+    }
+    span {
+      background-color: lightgreen !important; /* <------ */
+      padding: .1em .2em;
+    }
+    em {
+      background-color: yellow;
+    }
+  </style>
+
+</head>
+
+<body>
+  <p>
+    This text has an <span style="background-color: orange">inline element</span> that is styled directly in the
+    HTML (with a <code>style</code> attribute), but then that style is not
+    applied since there is a more important style in the stylesheet, because
+    <em>it uses the <code>!important</code> mark</em>.
+  </p>
+</body>
+</html>
