@@ -1,0 +1,128 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <style>
+      input {
+        font-size: 1.5rem;
+      }
+      input[type="text"] {
+        font-size: 3rem;
+        font-family: monospace;
+        text-align: right;
+        width: 270px;
+      }
+      input[type="button"] {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.5rem;
+      }
+      input[value="="] {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <p><input id="number" type="text" size="10" value="0" /></p>
+      <p>
+        <input type="button" value="7" />
+        <input type="button" value="8" />
+        <input type="button" value="9" />
+        <input type="button" value="*" />
+      </p>
+      <p>
+        <input type="button" value="4" />
+        <input type="button" value="5" />
+        <input type="button" value="6" />
+        <input type="button" value="-" />
+      </p>
+      <p>
+        <input type="button" value="1" />
+        <input type="button" value="2" />
+        <input type="button" value="3" />
+        <input type="button" value="+" />
+      </p>
+      <p>
+        <input type="button" value="C" />
+        <input type="button" value="0" />
+        <input type="button" value="=" />
+        <input type="button" value="/" />
+      </p>
+    </form>
+
+    <script>
+      let numInput = document.getElementById("number");
+      let number = 0;
+      let accum = 0;
+      let op = null;
+
+      const limitToDecimals = ndecimals => {
+        let result = String(number);
+        if (result.includes(".")) {
+          let [num, decimals] = result.split(".");
+          console.log(num, decimals);
+          decimals =
+            decimals.length > ndecimals
+              ? decimals.slice(0, ndecimals)
+              : decimals;
+          result = `${num}.${decimals}`;
+        }
+        return result;
+      };
+
+      const update = () => {
+        numInput.value = limitToDecimals(8);
+      };
+
+      const push = fn => {
+        accum = number;
+        number = 0;
+        op = fn;
+        update();
+      };
+
+      const addDigit = digit => {
+        console.log("addDigit", digit);
+        number = number * 10 + digit;
+        update();
+      };
+
+      const handle = (buttonText, fn) => {
+        const button = document.querySelector(
+          `input[type="button"][value="${buttonText}"]`
+        );
+        if (button) {
+          console.log(button);
+          button.addEventListener("click", fn);
+        } else {
+          console.error("Not found! ", buttonText);
+        }
+      };
+
+      for (let i = 0; i < 10; i++) {
+        handle(`${i}`, e => addDigit(i));
+      }
+
+      handle("+", e => push((a, b) => a + b));
+      handle("-", e => push((a, b) => b - a));
+      handle("*", e => push((a, b) => a * b));
+      handle("/", e => push((a, b) => b / a));
+
+      handle("=", e => {
+        if (op) {
+          number = op(number, accum);
+          update();
+        }
+      });
+
+      handle("C", e => {
+        accum = number = 0;
+        op = null;
+        update();
+      });
+    </script>
+  </body>
+</html>
