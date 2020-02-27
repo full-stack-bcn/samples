@@ -1,5 +1,5 @@
-
 (() => {
-  const a = 1, b = 2;
+  const a = 1,
+    b = 2;
   console.log(a, b);
 })();

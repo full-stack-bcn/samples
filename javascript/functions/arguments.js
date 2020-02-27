@@ -1,5 +1,9 @@
-function addOne(x) { x++; }
-function pushOne(x) { x.push(1); }
+function addOne(x) {
+  x++;
+}
+function pushOne(x) {
+  x.push(1);
+}
 
 let x = 5;
 let a = [-3, -2, -1, 0];

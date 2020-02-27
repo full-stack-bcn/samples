@@ -1,6 +1,5 @@
-
-console.log('inicio')
+console.log("inicio");
 setTimeout(() => {
-  console.log('hi, there')
-}, 0)
-console.log('fin')
+  console.log("hi, there");
+}, 0);
+console.log("fin");

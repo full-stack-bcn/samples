@@ -1,10 +1,13 @@
-
 class Person {
   constructor(name) {
     this.privateName = name;
   }
-  get name() { return this.privateName; }
-  set name(newname) { this.privateName = newname; }
+  get name() {
+    return this.privateName;
+  }
+  set name(newname) {
+    this.privateName = newname;
+  }
 }
 
 let p = new Person("Bob");

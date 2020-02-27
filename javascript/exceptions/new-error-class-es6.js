@@ -1,13 +1,12 @@
-
 class StupidError extends Error {
   constructor(message) {
-    super(message)
-    this.name = 'StupidError'
+    super(message);
+    this.name = "StupidError";
   }
 }
 
 try {
-  throw new StupidError()
+  throw new StupidError();
 } catch (e) {
-  console.log(e.name)
+  console.log(e.name);
 }

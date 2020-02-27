@@ -1,7 +1,6 @@
-
 function f() {
-  console.log(this.x)
+  console.log(this.x);
 }
 
-f()
-console.log(this)
+f();
+console.log(this);

@@ -10,5 +10,5 @@ try {
 } catch (e) {
   console.log("Error Type: ", e.name);
   console.log("Error Message: ", e.message);
-  console.log("Error stack: ", typeof(e.stack));
+  console.log("Error stack: ", typeof e.stack);
 }

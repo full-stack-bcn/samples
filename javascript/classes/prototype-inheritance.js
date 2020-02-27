@@ -1,10 +1,9 @@
-
 function Person(name) {
   this.name = name;
 }
 Person.prototype.sayHi = function() {
   console.log("Hi, I'm " + this.name);
-}
+};
 
 function Superhero(name, hero) {
   this.name = name;
@@ -12,7 +11,7 @@ function Superhero(name, hero) {
 }
 Superhero.prototype.breakThroughWall = function() {
   console.log(`Look! ${this.hero} broke through a wall!`);
-}
+};
 
 Superhero.prototype.__proto__ = Person.prototype;
 

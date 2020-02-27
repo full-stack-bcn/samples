@@ -1,10 +1,9 @@
-
 function makeCounter() {
-	let count = 0;
-	return function() {
-		count++;
-		return count;
-	}
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
 }
 
 let c1 = makeCounter();

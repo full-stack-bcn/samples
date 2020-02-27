@@ -2,7 +2,9 @@ let animal = {
   walk() {
     if (!this.isSleeping) alert(`I walk`);
   },
-  sleep() { this.isSleeping = true; }
+  sleep() {
+    this.isSleeping = true;
+  }
 };
 
 let rabbit = {

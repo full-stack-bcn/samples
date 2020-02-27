@@ -1,6 +1,5 @@
+const pr = console.log;
 
-const pr = console.log
-
-pr('begin')
-setTimeout(() => pr('timeout0'), 0)
-pr('finished')
+pr("begin");
+setTimeout(() => pr("timeout0"), 0);
+pr("finished");

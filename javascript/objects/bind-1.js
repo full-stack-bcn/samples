@@ -1,7 +1,8 @@
-
 let user = {
-	name: "Ryan",
-	hi() { console.log("Hi, " + this.name + "!"); }
+  name: "Ryan",
+  hi() {
+    console.log("Hi, " + this.name + "!");
+  }
 };
 
 user.hi();

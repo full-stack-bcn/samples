@@ -1,4 +1,3 @@
-
 /* 
 
 Escribe un programa que muestra las letras de:
@@ -17,6 +16,6 @@ You programmed me.
 `;
 
 [...texto].forEach((c, i, array) => {
-  const numEndls = array.slice(0, i).filter(c => c === '\n').length
-  setTimeout(() => process.stdout.write(c), i * 100 + numEndls * 700)
-})
+  const numEndls = array.slice(0, i).filter(c => c === "\n").length;
+  setTimeout(() => process.stdout.write(c), i * 100 + numEndls * 700);
+});

@@ -1,10 +1,7 @@
+console.log("inicio");
 
-console.log('inicio')
+setTimeout(() => console.log("hi, there"), 0);
 
-setTimeout(() => console.log('hi, there'), 0)
+while (true) {}
 
-while (true) {
-
-}
-
-console.log('fin')
+console.log("fin");

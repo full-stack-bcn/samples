@@ -1,6 +1,8 @@
 let figure = {
-  area() { return this.width * this.height; }
-}
+  area() {
+    return this.width * this.height;
+  }
+};
 function Rectangle(x, y, width, height) {
   this.x = x;
   this.y = y;

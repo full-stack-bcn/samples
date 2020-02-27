@@ -1,6 +1,5 @@
+const pr = console.log;
 
-const pr = console.log
-
-pr('begin')
-setImmediate(() => pr('setImmediate'), 0)
-pr('finished')
+pr("begin");
+setImmediate(() => pr("setImmediate"), 0);
+pr("finished");

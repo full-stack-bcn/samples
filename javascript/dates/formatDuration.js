@@ -9,8 +9,8 @@ const formatDuration = ms => {
   };
   return Object.entries(time)
     .filter(([prop, val]) => val !== 0)
-    .map(([prop, val]) => val + ' ' + (val !== 1 ? prop + 's' : prop))
-    .join(', ');
+    .map(([prop, val]) => val + " " + (val !== 1 ? prop + "s" : prop))
+    .join(", ");
 };
 
 console.log(formatDuration(1287038123));

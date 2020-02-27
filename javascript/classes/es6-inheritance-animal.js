@@ -1,4 +1,3 @@
-
 class Animal {
   constructor(type) {
     this.type = type;
@@ -14,7 +13,6 @@ class Animal {
 class Dog extends Animal {
   constructor() {
     super("dog"); // Here we call the constructor of Animal, which is the "super"-class
-    
   }
   makeSound() {
     console.log("Woof! Woof!");

@@ -1,10 +1,9 @@
-
 let obj = {
   a: 1,
-  b: 'hi',
+  b: "hi",
   c: true
-}
+};
 
-console.log(obj)
-delete obj.a
-console.log(obj)
+console.log(obj);
+delete obj.a;
+console.log(obj);

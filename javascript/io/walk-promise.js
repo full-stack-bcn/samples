@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const walk = (dir) => {
+const walk = dir => {
   return new Promise((resolve, reject) => {
     fs.readdir(dir, (error, files) => {
       if (error) {
@@ -33,7 +33,6 @@ const walk = (dir) => {
       });
     });
   });
-}
+};
 
-
-walk('.').then(files => console.log(files))
+walk(".").then(files => console.log(files));

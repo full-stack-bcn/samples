@@ -10,4 +10,4 @@ A = [1, 2, 3, 4, 5, 6];
 A.splice(2, 0, 2.4, 2.6);
 console.log(A);
 
-console.log(A.splice(-1))
+console.log(A.splice(-1));

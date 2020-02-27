@@ -1,6 +1,5 @@
-
 const f = () => {
-  console.log(a)
-}
+  console.log(a);
+};
 
-f()
+f();

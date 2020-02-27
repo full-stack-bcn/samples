@@ -1,13 +1,15 @@
 function makeCounter2() {
-   let count = 0;
-   return {
-      val: () => count,
-      add: n => {
-         count += n;
-         return count;
-      },
-      reset: () => { count = 0; }
-   };
+  let count = 0;
+  return {
+    val: () => count,
+    add: n => {
+      count += n;
+      return count;
+    },
+    reset: () => {
+      count = 0;
+    }
+  };
 }
 
 let c1 = makeCounter2();

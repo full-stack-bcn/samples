@@ -1,17 +1,13 @@
+const readline = require("readline");
 
-const readline = require('readline');
+let R = readline.createInterface(process.stdin, process.stdout);
 
-let R = readline.createInterface(
-  process.stdin,
-  process.stdout,
-);
+process.stdout.write("> ");
 
-process.stdout.write('> ');
-
-R.on('line', (line) => {
+R.on("line", line => {
   if (line === "quit") {
     process.exit(0);
   }
   console.log("you typed: " + line);
-  process.stdout.write('> ');
+  process.stdout.write("> ");
 });

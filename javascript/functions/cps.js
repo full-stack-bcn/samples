@@ -1,4 +1,3 @@
-
 const add = (a, b, fn) => fn(a + b);
 const mul = (a, b, fn) => fn(a * b);
 

@@ -1,4 +1,3 @@
-
 /* 
 
 Escribe un programa que muestra las letras de:
@@ -14,19 +13,19 @@ Para los saltos de línea, añade 700 milisegundos extra.
 const texto = `
 You should know that, professor.
 You programmed me.
-`
+`;
 
 const showChar = i => {
-  process.stdout.write(WOPR[i])
+  process.stdout.write(WOPR[i]);
   let delay = 100;
-  if (WOPR[i] === '\n') {
+  if (WOPR[i] === "\n") {
     delay += 700;
   }
   setTimeout(() => {
     if (i + 1 < WOPR.length) {
-      showChar(i + 1)
+      showChar(i + 1);
     }
-  }, delay)
-}
+  }, delay);
+};
 
-showChar(0)
+showChar(0);
