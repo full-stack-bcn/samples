@@ -1,52 +1,50 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript: Create a colored number grid on the DOM</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Javascript: Create a colored number grid on the DOM</title>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: sans-serif;
+      }
+      .number {
+        width: 3.2em;
+        height: 3.2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.2em;
+        margin: 0.2em;
+      }
+    </style>
+  </head>
 
-  <style>
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      font-family: sans-serif;
-    }
-    .number {
-      width: 3.2em;
-      height: 3.2em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: .2em;
-      margin: .2em;
-    }
-  </style>
-</head>
+  <body>
+    <main />
 
-<body>
-  <main />
+    <script>
+      const main = document.querySelector("main");
 
-  <script>
-    const main = document.querySelector('main');
-
-    const createNumber = (n) => {
-      let num = document.createElement('div');
-      num.className = "number";
-      let span = document.createElement('span');
-      span.innerText = `${n}`;
-      const nmod = n % 256;
-      // Text is black or white depending on the hue
-      span.style = `color: ${nmod < 40 || nmod > 190 ? 'white' : 'black'};`;
-      const color = `hsla(${nmod}, 100%, 50%, 1)`;
-      num.style = `background-color: ${color};`;
-      num.appendChild(span);
-      console.log(color);
-      main.appendChild(num);
-    }
-    for (let i = 1; i <= 1000; i++) {
-      createNumber(i);
-    }
-  </script>
-</body>
-
+      const createNumber = n => {
+        let num = document.createElement("div");
+        num.className = "number";
+        let span = document.createElement("span");
+        span.innerText = `${n}`;
+        const nmod = n % 256;
+        // Text is black or white depending on the hue
+        span.style = `color: ${nmod < 40 || nmod > 190 ? "white" : "black"};`;
+        const color = `hsla(${nmod}, 100%, 50%, 1)`;
+        num.style = `background-color: ${color};`;
+        num.appendChild(span);
+        console.log(color);
+        main.appendChild(num);
+      };
+      for (let i = 1; i <= 1000; i++) {
+        createNumber(i);
+      }
+    </script>
+  </body>
 </html>
