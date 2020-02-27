@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript: controlling the size of a div</title>
+
+  <style>
+    #rect {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+    input[type="range"] {
+      width: 20em;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <p><label>Width  <input type="range" min="100" max="500" name="width" value="100"></label></p>
+    <p><label>Height <input type="range" min="100" max="500" name="height" value="100"></label></p>
+  </form>
+  <div id="rect" />
+
+  <script>
+    const rect = document.getElementById('rect');
+    document.querySelector('input[name="width"]').addEventListener('input', event => {
+      rect.style.width = event.target.value;
+    })
+    document.querySelector('input[name="height"]').addEventListener('input', event => {
+      rect.style.height = event.target.value;
+    })
+  </script>
+</body>
+</html>
