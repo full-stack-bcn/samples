@@ -21,6 +21,7 @@ hi();
 // Since we called 'fhi' without an object "on the left",
 // it will consider 'this' to be the global object.
 
+
 /*
   To produce the right behavior, we have to "bind" the user object
   to the method. There is a special method 'bind' in all Function objects 
