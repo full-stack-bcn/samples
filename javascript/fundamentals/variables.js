@@ -1,12 +1,18 @@
-let a;
-console.log(a);
+// We can declare variables with 'let'
+let a = 3;
+let b = true;
+let c = "hi";
 
-a = 1;
 console.log(a);
+console.log(b);
+console.log(c);
 
-a = "Hi, there!";
+// We can assign values of any type
+a = "three";
+b = 0;
+c = 0.0001;
+
 console.log(a);
+console.log(b);
+console.log(c);
 
-let b = "xxx";
-let t = typeof b[0];
-console.log(b[0].length);
