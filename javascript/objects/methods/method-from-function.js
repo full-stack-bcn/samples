@@ -4,9 +4,18 @@ function salute() {
 
 let user = {
   name: "Andy",
-  // We can also use an already defined function as a method
-  // (There is no "real" association between object and method)
+  age: 27,
+  // We can use an already defined function as a method
+  // (Association between method and object is dynamic)
   salute
 };
 
 user.salute();
+
+// We can add a new method later
+function showMentalAge() {
+  console.log("Mental age:", this.age - 7);
+}
+
+user.mentalAge = showMentalAge;
+user.mentalAge();
