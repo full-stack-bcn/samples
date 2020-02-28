@@ -27,3 +27,8 @@ let obj2 = {
   }
 };
 console.log(obj2);
+
+// If we put numbers into properties (as if the object was an array), 
+// they will be converted to strings
+obj[0] = 0;
+console.log(obj);
