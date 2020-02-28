@@ -10,8 +10,7 @@
 
 // console.log(a, b);  // <-- Uncomment to see how 'a' and 'b' don't exist
 
-
-/*
+/*-----------------------------------------------------------------------------
   Modern Javascript does not need IIFEs anymore, because we can obtain the same
   effect with code blocks plus 'let' and 'const'.
 */
