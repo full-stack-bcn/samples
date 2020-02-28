@@ -3,7 +3,7 @@ let obj = {
   b: "hi",
   c: true
 };
-
 console.log(obj);
+
 delete obj.a;
 console.log(obj);
