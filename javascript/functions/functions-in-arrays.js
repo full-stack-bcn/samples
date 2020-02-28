@@ -7,7 +7,7 @@ let funcs = [
   (a, b) => a / b,
 ];
 
-// To call a function, first we get it from the array, then call it
 for (let i = 0; i < funcs.length; i++) {
+  // To call a function, first we get it from the array cell, then call it
   console.log(funcs[i](5, 12));
 }
