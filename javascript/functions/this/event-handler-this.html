@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event handler this sample</title>
+</head>
+<body>
+  <button>Click me!</button>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', function (e) {
+      // -> open the console and check that the logged 'this' is the button element
+      console.log(this);
+      this.innerText = 'You did click!';
+    });
+    // Some browsers don't do the same if you set the event with button.onclick = ...
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#As_a_DOM_event_handler
+
+    // Remember... if we put an arrow function as handler, 'this' will refer to the window
+    button.onmouseenter = (e) => {
+      console.log(this);
+    }
+  </script>
+</body>
+</html>
