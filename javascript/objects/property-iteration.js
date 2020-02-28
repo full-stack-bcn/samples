@@ -4,11 +4,12 @@ let obj = {
   prop3: true
 };
 
+// We can iterate properties of an object with for-in
 for (let prop in obj) {
   console.log(`${prop} = ${obj[prop]}`);
 }
 
-// Error: obj is not iterable
-for (let prop of obj) {
+// Warning: do not confuse with for-of which works for arrays only
+for (let prop of obj) { // <-- Produces TypeError
   console.log(`${prop} = ${obj[prop]}`);
 }
