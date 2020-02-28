@@ -3,13 +3,11 @@
 function Foo() {}
 var foo = new Foo();
 
-const _ = console.log;
+console.log(typeof Foo); // -> "function"
+console.log(typeof foo); // -> "object"
+console.log(foo instanceof Foo); // -> true
+console.log(foo.__proto__.constructor === Foo); // -> true
+console.log(Foo.prototype.isPrototypeOf(foo)); // -> true
 
-_(typeof Foo); // -> "function"
-_(typeof foo); // -> "object"
-_(foo instanceof Foo); // -> true
-_(foo.__proto__.constructor === Foo); // -> true
-_(Foo.prototype.isPrototypeOf(foo)); // -> true
-
-_(foo.constructor.name); // -> "Foo"
-_(Foo.name); // -> "Foo"
+console.log(foo.constructor.name); // -> "Foo"
+console.log(Foo.name); // -> "Foo"
