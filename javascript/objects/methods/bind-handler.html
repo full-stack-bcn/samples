@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind example in event handlers</title>
+
+    <style>
+      #rectangle {
+        width: 20rem;
+        height: 12rem;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="rectangle"></div>
+    <div>Clicked <span id="count">0</span> times</div>
+
+    <script>
+      const count = document.getElementById("count");
+      const rectangle = document.getElementById("rectangle");
+
+      let counter = {
+        value: 0,
+        increment() {
+          count.innerText = `${++this.value}`;
+        }
+      };
+
+      // We need to use 'bind' here because we need to increment the value
+      // of the counter and the 'this' variable has to be the counter!
+      rectangle.onclick = counter.increment.bind(counter);
+    </script>
+  </body>
+</html>
