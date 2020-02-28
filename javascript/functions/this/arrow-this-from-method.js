@@ -1,13 +1,17 @@
 let user = {
   name: "Steve",
 
-  makeSaluteFunction() {
+  makeSaluteFunction(hi) {
     // The arrow function we return here takes the 'this' variable
     // from the 'makeSaluteFunction' method.
-    return () => console.log(`Hi, I'm ${this.name}!`);
+    return () => console.log(`${hi}, I'm ${this.name}!`);
   }
 };
 
-const salute = user.makeSaluteFunction();
+// When we call 'makeSaluteFunction' it will generate closures
+// that capture the 'this' variable, which is the user.
+const saluteHi = user.makeSaluteFunction('Hi');
+const saluteHello = user.makeSaluteFunction('Hello');
 
-salute();
+saluteHi();
+saluteHello();
