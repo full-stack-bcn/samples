@@ -1,3 +1,4 @@
+// Splice removes some elements and inserts some elements
 let A = [1, 2, 3, 4, 5, 6];
 A.splice(2, 2);
 console.log(A); // -> [1, 2, 5, 6]

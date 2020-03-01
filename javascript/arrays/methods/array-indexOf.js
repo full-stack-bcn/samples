@@ -1,3 +1,5 @@
+// indexOf searches for the first element of a certain
+// value and returns its index
 let A = [1, 0, false, 0, 1, false];
 
 console.log(A.indexOf(0));

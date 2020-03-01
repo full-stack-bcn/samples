@@ -8,7 +8,7 @@ console.log(dest);
 let source2 = [...source, ...source];
 console.log(source2);
 
-// Array spread just asks for the object to be an iterable
+// Array spread just asks for spreaded object to be an 'Iterable'
 let text = "lorem ipsum";
 let a = [...text];
 console.log(a);
