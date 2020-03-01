@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Collections are iterables</title>
+
+    <style>
+      span {
+        border: 1px solid gray;
+        padding: 2px 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+    </div>
+    <script>
+      let spanList = document.querySelectorAll("div span");
+      // spanList is an iterable, so we can use for-of
+      for (let span of spanList) {
+        span.innerText += " **";
+      }
+
+      // We can also obtain an array of these elements with Array.from
+      // or the spread operator
+      console.log(Array.from(spanList));
+      console.log([...spanList]);
+    </script>
+  </body>
+</html>
