@@ -16,10 +16,10 @@ class Superhero extends Person {
   }
 }
 
-let mri = new Superhero("Mr. Incredible", 42, [
-  "Break through walls",
+let mrIncredible = new Superhero("Mr. Incredible", 52, [
+  "Breaks through walls",
   "strong"
 ]);
 
-console.log(mri);
-console.log(mri.toString());
+console.log(mrIncredible);
+console.log(mrIncredible.toString());
