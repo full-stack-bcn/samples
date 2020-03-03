@@ -21,3 +21,15 @@ Constructors
 A function 
 [can be used as a constructor](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/function-constructor.js)
 by using the ``new`` operator, which creates a new object and binds it to the function ``this``.
+
+
+Unbinding
+---------
+
+Even if we declare a method inside an object, it is an independent ``function`` object, so
+[if we use it standalone](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/method-unbind.js) 
+we loose the connection with its original object.
+
+However, functions have a ``bind`` method which 
+[sets the ``this`` variable](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/function-bind.js) 
+inside the function. ``bind`` returns a *new* function which is bound permanently.

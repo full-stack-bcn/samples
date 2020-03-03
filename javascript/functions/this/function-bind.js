@@ -2,6 +2,7 @@
   The bind method sets the value of 'this' within the function
 */
 
+// Lets create a function that uses the 'this' variable
 function compute() {
   console.log(`${this.a} + ${this.b} =`, this.a + this.b);
 }
