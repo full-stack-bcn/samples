@@ -23,8 +23,8 @@ A function
 by using the ``new`` operator, which creates a new object and binds it to the function's ``this``.
 
 
-Unbinding
----------
+Unbinding and ``bind``
+----------------------
 
 Even if we declare a method inside an object, it is an independent ``function`` object, so
 [if we use it standalone](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/method-unbind.js) 
@@ -42,3 +42,10 @@ By definition arrow functions don't have a ``this`` variable. But we can still u
 [it is taken from the lexical context](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/arrow-this-from-lexical-scope.js). 
 Inside a function which does have ``this``, 
 [an arrow function will use it](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/arrow-this-from-method.js).
+
+
+Event Handlers
+--------------
+
+In the browser, event handlers 
+[receive the target element in the ``this`` variable](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/event-handler-this.html).
