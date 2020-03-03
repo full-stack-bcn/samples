@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This is the window object</title>
+  </head>
+  <body>
+    <p>
+      In the browser, <code>this</code> on a normal function is the
+      <code>window</code> object
+    </p>
+    <script>
+      function checkWindow() {
+        if (this === window) {
+          let p = document.createElement('p');
+          p.innerHTML = 'Yes! I just checked from Javascript that <code>this</code> is the <code>window</code> object!';
+          p.style.color = 'red';
+          document.body.appendChild(p);
+        }
+      }
+      checkWindow();
+    </script>
+  </body>
+</html>
