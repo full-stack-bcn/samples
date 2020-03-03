@@ -33,3 +33,12 @@ we loose the connection with its original object.
 However, functions have a ``bind`` method which 
 [sets the ``this`` variable](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/function-bind.js) 
 inside the function. ``bind`` returns a *new* function which is bound permanently.
+
+
+Arrow functions
+---------------
+
+By definition arrow functions don't have a ``this`` variable. But we can still use it because
+[it is taken from the lexical context](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/arrow-this-from-lexical-scope.js). 
+Inside a function which does have ``this``, 
+[an arrow function will use it](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/arrow-this-from-method.js).
