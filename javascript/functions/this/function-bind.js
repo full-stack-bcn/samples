@@ -10,10 +10,10 @@ function compute() {
 // If we call it directly, the 'this' object won't have 'a' and 'b'
 compute();
 
-// If we bind the function to an object with those fields, it will work correctly
+// If we bind the function to an object having 'a' and 'b', it will work correctly
 let obj = { a: 2, b: 3 };
 const boundCompute = compute.bind(obj);
-boundCompute();
+boundCompute(); // boundCompute is a new function, permanently bound to 'obj'
 
 // We can also do it in one step
 compute.bind({ a: 7, b: 11 })();
