@@ -9,6 +9,7 @@ Short samples about Javascript concepts:
 1. [Arrays](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/arrays)
 1. [Destructuring](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/destructuring)
 1. [JSON](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/objects/JSON)
+1. [``this``](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/this) 
 1. [Closures](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/closures)
 1. [Classes](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/classes)
 1. [Exceptions](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/exceptions)
