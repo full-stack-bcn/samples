@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currying in event handlers demo</title>
+
+    <style>
+      body {
+        display: flex;
+        padding: 1em;
+      }
+      body div {
+        width: 80px;
+        height: 80px;
+        border: 1px solid gray;
+        background-color: #ddd;
+        margin-right: 1em;
+        border: 3px solid #aaa;
+      }
+      .selected {
+        background-color: blue;
+      }
+      .marked {
+        border: 3px solid blue;
+        border-style: dashed;
+      }
+      .hidden {
+        opacity: 0.25;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+
+    <script>
+      let a = document.getElementById("a");
+      let b = document.getElementById("b");
+      let c = document.getElementById("c");
+
+      // This is a higher-order function that produces 3 different event
+      // handlers which toggle a specific class on an element
+      const toggleClassHandler = _class =>
+        function(event) {
+          if (this.classList.contains(_class)) {
+            this.classList.remove(_class);
+          } else {
+            this.classList.add(_class);
+          }
+        };
+
+      a.addEventListener("click", toggleClassHandler("selected"));
+      b.addEventListener("click", toggleClassHandler("marked"));
+      c.addEventListener("click", toggleClassHandler("hidden"));
+    </script>
+  </body>
+</html>
