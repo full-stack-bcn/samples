@@ -13,7 +13,7 @@
       }
       .user {
         display: flex;
-        padding: .3em;
+        padding: 0.3em;
         align-items: center;
         border-top: 1px solid #eee;
       }
@@ -21,7 +21,7 @@
         background-color: rgb(232, 232, 255);
       }
       .user img {
-        margin-right: .8em;
+        margin-right: 0.8em;
         border-radius: 50%;
       }
       .info {
@@ -52,7 +52,7 @@
               <span class="email">${email}</span>
             </div>
           `;
-          div.classList.add('user');
+          div.classList.add("user");
           return div;
         });
         document.getElementById("users").append(...userElements);
