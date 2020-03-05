@@ -11,7 +11,7 @@
       }
       table tr td {
         font-family: monospace;
-        padding: .2em .5em;
+        padding: 0.2em 0.5em;
       }
       table td {
         border: 1px solid #ccc;
@@ -67,41 +67,50 @@
         table.appendChild(header);
       }
 
+      const optable = [
+        { op: "+", fn: (a, b) => a + b },
+        { op: "-", fn: (a, b) => a - b },
+        { op: "*", fn: (a, b) => a * b },
+        { op: "/", fn: (a, b) => a / b },
+        { op: "%", fn: (a, b) => a % b },
+        { op: "<", fn: (a, b) => a < b },
+        { op: "<=", fn: (a, b) => a <= b },
+        { op: ">", fn: (a, b) => a > b },
+        { op: ">=", fn: (a, b) => a >= b },
+        { op: "==", fn: (a, b) => a == b },
+        { op: "===", fn: (a, b) => a === b }
+      ];
+
       function update() {
         let val1 = Number(op1.value);
         let val2 = Number(op2.value);
         removeAllChildren(table);
         addRow("Expression", "Result", "th");
-        addRow(`${val1} + ${val2}`, `${val1 + val2}`);
-        addRow(`${val1} - ${val2}`, `${val1 - val2}`);
-        addRow(`${val1} * ${val2}`, `${val1 * val2}`);
-        addRow(`${val1} / ${val2}`, `${val1 / val2}`);
-        addRow(`${val1} % ${val2}`, `${val1 % val2}`);
-
-        addRow(`${val1} < ${val2}`, `${val1 < val2}`);
-        addRow(`${val1} <= ${val2}`, `${val1 <= val2}`);
-        addRow(`${val1} > ${val2}`, `${val1 > val2}`);
-        addRow(`${val1} >= ${val2}`, `${val1 >= val2}`);
-
-        addRow(`${val1} == ${val2}`, `${val1 == val2}`);
-        addRow(`${val1} === ${val2}`, `${val1 === val2}`);
+        optable.forEach(({ op, fn }) => {
+          addRow(`${val1} ${op} ${val2}`, `${fn(val1, val2)}`);
+        });
       }
 
       op1.addEventListener("change", update);
       op2.addEventListener("change", update);
+
       document.forms[0].addEventListener("submit", event => {
         event.preventDefault();
         update();
       });
 
-      document.querySelector('input[name="op1"] + input').addEventListener('click', event => {
-        op1.value = String(Number(op1.value) + 10);
-        update();
-      })
-      document.querySelector('input[name="op2"] + input').addEventListener('click', event => {
-        op2.value = String(Number(op2.value) + 10);
-        update();
-      });
+      document
+        .querySelector('input[name="op1"] + input')
+        .addEventListener("click", event => {
+          op1.value = String(Number(op1.value) + 10);
+          update();
+        });
+      document
+        .querySelector('input[name="op2"] + input')
+        .addEventListener("click", event => {
+          op2.value = String(Number(op2.value) + 10);
+          update();
+        });
 
       update();
     </script>
