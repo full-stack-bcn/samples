@@ -18,7 +18,7 @@
         border-top: 1px solid #eee;
       }
       .user:hover {
-        background-color: rgb(232, 232, 255);
+        background-color: rgb(245, 246, 248);
       }
       .user img {
         margin-right: 0.8em;
@@ -37,7 +37,7 @@
     <div id="users"></div>
 
     <script>
-      const showUsers = users => {
+      const showUsers = ({ results: users }) => {
         var userElements = users.map(user => {
           let {
             name: { first, last },
@@ -60,10 +60,7 @@
 
       fetch("https://randomuser.me/api/?results=50")
         .then(response => response.json())
-        .then(json => {
-          console.log(json.results[0]);
-          showUsers(json.results);
-        });
+        .then(showUsers);
     </script>
   </body>
 </html>
