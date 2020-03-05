@@ -1,9 +1,10 @@
 
-Samples for the Postgraduate Degree in Full-Stack Web Technologies
-------------------------------------------------------------------
+Web Technology samples
+----------------------
 
-This repository contains very small files illustrating a single idea.
+These samples are student material for the [Postgraduate Degree in Full-stack Web Technologies](https://www.talent.upc.edu/cat/estudis/formacio/curs/313400/postgrau-full-stack-web-technologies/).
 
-There are folders for:
+
 1. [HTML](https://github.com/full-stack-bcn/samples/tree/master/html).
-2. [Javascript](https://github.com/full-stack-bcn/samples/tree/master/javascript).
+1. [CSS](https://github.com/full-stack-bcn/samples/tree/master/css).
+1. [Javascript](https://github.com/full-stack-bcn/samples/tree/master/javascript).
