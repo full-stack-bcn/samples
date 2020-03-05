@@ -1,4 +1,3 @@
-
 Javascript
 ==========
 
@@ -19,11 +18,4 @@ Short samples about Javascript concepts:
 1. [CommonJS Modules](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/commonjs-modules)
 1. [Asynchronous Javascript](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/async)
 1. [Input/Output](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/io)
-
-Demos:
-
-1. [Number Grid](https://github.com/full-stack-bcn/samples/tree/master/javascript/demos/number-grid.html)
-1. [Calculator](https://github.com/full-stack-bcn/samples/tree/master/javascript/demos/calculator.html)
-1. [User List](https://github.com/full-stack-bcn/samples/tree/master/javascript/demos/user-list-from-api.html)
-1. [Operator Table](https://github.com/full-stack-bcn/samples/tree/master/javascript/demos/operator-table.html)
-
+1. [DOM](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/DOM)
