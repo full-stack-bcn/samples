@@ -1,0 +1,9 @@
+{
+  "name": "circle",
+  "version": "0.0.1+hotfix",
+  "description": "A couple of circle functions",
+  "main": "circle.js",
+  "keywords": ["math", "circle", "trigonometry"],
+  "author": "Pau Fernández <pauek@minidosis.org>",
+  "license": "ISC"
+}
