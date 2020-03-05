@@ -1,7 +1,7 @@
 const log = console.log;
 
-const compose = (...functions) => args =>
-  functions.reduceRight((arg, fn) => fn(arg), args);
+const compose = (...functions) => value =>
+  functions.reduceRight((x, fn) => fn(x), value);
 
 const plus1 = x => x + 1;
 const mul2 = y => y * 2;
