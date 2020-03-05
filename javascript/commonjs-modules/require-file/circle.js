@@ -6,4 +6,4 @@ const area = radius => Math.PI * radius ** 2;
 exports.area = area;
 exports.perimeter = perimeter;
 
-console.log('circle module loaded!');
+console.log('circle.js file module loaded!');
