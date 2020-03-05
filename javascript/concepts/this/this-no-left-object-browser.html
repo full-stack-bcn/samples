@@ -10,15 +10,25 @@
       <code>window</code> object
     </p>
     <script>
+      
+      function printMessage(msg) {
+        let p = document.createElement("p");
+        p.innerHTML = msg;
+        p.style.color = "red";
+        document.body.appendChild(p);
+      }
+
       function checkWindow() {
         if (this === window) {
-          let p = document.createElement('p');
-          p.innerHTML = 'Yes! I just checked from Javascript that <code>this</code> is the <code>window</code> object!';
-          p.style.color = 'red';
-          document.body.appendChild(p);
+          printMessage(
+            "Yes! I just checked from Javascript that " +
+              "<code>this</code> is the <code>window</code> object!"
+          );
         }
       }
+
       checkWindow();
+
     </script>
   </body>
 </html>

@@ -2,17 +2,22 @@
 The ``this`` variable inside functions
 ======================================
 
-Functions **always** have a ``this`` variable, which is *implicit*.
+The ``this`` variable exists everywhere. In the global context, 
+[it points to the global object](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/this-global-object.js).
+
+Functions **always** have a ``this`` variable, which is *implicit* (it is not declared).
 
 * If you call a function without a "left object", ``this`` will be 
   [the global object](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/this-no-left-object.js), 
   or, in the browser, 
-  [the window object](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/this-no-left-object-browser.html).
+  [the window object](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/this-no-left-object-browser.html). In strict mode (with ``"use strict";``), 
+  [this does not happen](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/this-global-object-use-strict.html),
+  the ``this`` within a function is ``undefined``.
 
 * If you call a function with a "left object", ``this`` 
   [will be that object](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/this-left-object.js).
 
-Therefore, "all functions are methods", but if they are called without an object, they use the global object.
+Therefore, "all functions are methods", but if they are called without an object, they use the global object (in non-strict mode).
 
 
 Constructors
@@ -28,7 +33,7 @@ Unbinding and ``bind``
 
 Even if we declare a method inside an object, it is an independent ``function`` object, so
 [if we use it standalone](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/method-unbind.js) 
-we loose the connection with its original object.
+we loose the connection with its original object, because binding is done at the moment of the call.
 
 However, functions have a ``bind`` method which 
 [sets the ``this`` variable](https://github.com/full-stack-bcn/samples/blob/master/javascript/functions/this/function-bind.js) 
