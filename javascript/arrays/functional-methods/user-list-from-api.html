@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User from API</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .email {
+        font-family: monospace;
+      }
+      .user {
+        display: flex;
+        padding: .3em;
+        align-items: center;
+        border-top: 1px solid #eee;
+      }
+      .user:hover {
+        background-color: rgb(232, 232, 255);
+      }
+      .user img {
+        margin-right: .8em;
+        border-radius: 50%;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+      }
+      .info .name {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="users"></div>
+
+    <script>
+      const showUsers = users => {
+        var userElements = users.map(user => {
+          let {
+            name: { first, last },
+            email,
+            picture: { thumbnail: photo }
+          } = user;
+          let div = document.createElement("div");
+          div.innerHTML = `
+            <img src="${photo}" >
+            <div class="info">
+              <span class="name">${first} ${last}</span>
+              <span class="email">${email}</span>
+            </div>
+          `;
+          div.classList.add('user');
+          return div;
+        });
+        document.getElementById("users").append(...userElements);
+      };
+
+      fetch("https://randomuser.me/api/?results=50")
+        .then(response => response.json())
+        .then(json => {
+          console.log(json.results[0]);
+          showUsers(json.results);
+        });
+    </script>
+  </body>
+</html>
