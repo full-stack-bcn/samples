@@ -41,18 +41,12 @@
 
       // This is a higher-order function that produces 3 different event
       // handlers which toggle a specific class on an element
-      const toggleClassHandler = _class =>
-        function(event) {
-          if (this.classList.contains(_class)) {
-            this.classList.remove(_class);
-          } else {
-            this.classList.add(_class);
-          }
-        };
+      const toggleClass = _class => event =>
+        event.target.classList.toggle(_class);
 
-      a.addEventListener("click", toggleClassHandler("selected"));
-      b.addEventListener("click", toggleClassHandler("marked"));
-      c.addEventListener("click", toggleClassHandler("hidden"));
+      a.addEventListener("click", toggleClass("selected"));
+      b.addEventListener("click", toggleClass("marked"));
+      c.addEventListener("click", toggleClass("hidden"));
     </script>
   </body>
 </html>
