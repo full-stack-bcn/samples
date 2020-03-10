@@ -36,9 +36,9 @@ const post = async (url, payload, cookie) => {
 
 (async () => {
   const credentials = {
-    // name: "pauek",
     email: "pauek@example.com",
-    password: "Qwerty123"
+    password: "Qwerty123",
+    // name: "pauek",
     // passwordConfirmation: "Qwerty123"
   };
   console.log(credentials.email);

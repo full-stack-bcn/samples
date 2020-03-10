@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      ul {
+        padding-inline-start: 0;
+      }
+      ul li {
+        list-style-type: none;
+        border: 1px solid rgb(226, 226, 226);
+        margin-bottom: 0.1em;
+      }
+      ul li label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 2em;
+      }
+      li input[type="checkbox"] {
+        margin: 0.2em 0.7em;
+      }
+      label.done {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <form>
+      <p>
+        <label>Add todo: <input type="text" name="todo"/></label>
+        <button>Add</button>
+      </p>
+    </form>
+    <ul id="todos"></ul>
+    <button id="clear">Clear Done</button>
+    <script>
+      let jsonTodos = localStorage.getItem("todos");
+      let todos = jsonTodos ? JSON.parse(jsonTodos) : [];
+
+      const form = document.forms[0];
+      const todoText = document.querySelector('form input[name="todo"]');
+      const ul = document.getElementById("todos");
+
+      const clear = document.getElementById("clear");
+
+      const saveTodos = () => {
+        localStorage.setItem("todos", JSON.stringify(todos)); // save
+      };
+
+      clear.onclick = () => {
+        todos = todos.filter(t => !t.done);
+        saveTodos();
+        render();
+      };
+
+      const updateClearButton = () => {
+        clear.disabled = todos.filter(t => t.done).length === 0;
+      };
+
+      const render = () => {
+        ul.textContent = "";
+        todos.forEach(todo => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <label>
+              <input type="checkbox" ${todo.done ? "checked" : ""}>
+              <span>${todo.text}</span>
+            </label>
+          `;
+
+          const label = li.querySelector("label");
+          const checkbox = li.querySelector('input[type="checkbox"]');
+          checkbox.onclick = e => {
+            todo.done = e.target.checked;
+            saveTodos();
+            label.classList.toggle("done");
+            updateClearButton();
+          };
+
+          ul.appendChild(li);
+        });
+        updateClearButton();
+      };
+
+      render();
+
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        todos.push({ text: todoText.value, done: false });
+        saveTodos();
+        todoText.value = "";
+        render();
+      });
+    </script>
+  </body>
+</html>
