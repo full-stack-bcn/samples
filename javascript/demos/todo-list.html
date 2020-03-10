@@ -40,8 +40,8 @@
     <ul id="todos"></ul>
     <button id="clear">Clear Done</button>
     <script>
-      let jsonTodos = localStorage.getItem("todos");
-      let todos = jsonTodos ? JSON.parse(jsonTodos) : [];
+      let storedTodos = localStorage.getItem("todos");
+      let todos = storedTodos ? JSON.parse(storedTodos) : [];
 
       const form = document.forms[0];
       const todoText = document.querySelector('form input[name="todo"]');
@@ -65,7 +65,8 @@
 
       const render = () => {
         ul.textContent = "";
-        todos.forEach(todo => {
+
+        const renderTodo = todo => {
           const li = document.createElement("li");
           li.innerHTML = `
             <label>
@@ -82,13 +83,12 @@
             label.classList.toggle("done");
             updateClearButton();
           };
+          return li;
+        };
 
-          ul.appendChild(li);
-        });
+        ul.append(...todos.map(renderTodo));
         updateClearButton();
       };
-
-      render();
 
       form.addEventListener("submit", event => {
         event.preventDefault();
@@ -97,6 +97,9 @@
         todoText.value = "";
         render();
       });
+
+      // Render the first time
+      render();
     </script>
   </body>
 </html>
