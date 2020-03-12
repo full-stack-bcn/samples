@@ -1,8 +1,7 @@
-const fs = require("fs");
-
 function f(obj) {
   obj.wrongMethod();
 }
+
 function g(x) {
   x.anotherMethod(y);
 }
@@ -16,6 +15,6 @@ try {
       console.log(`ReferenceError: ${e.message}`);
       break;
     default:
-      console.log(`Otro: ${e.name}: ${e.message}`);
+      console.log(`Other type of error:\n ${e.name}: ${e.message}`);
   }
 }

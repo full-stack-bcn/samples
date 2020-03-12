@@ -3,4 +3,4 @@ const obj = {
   b: "hi"
 };
 
-console.log(obj.tuString());
+console.log(obj.tooString());

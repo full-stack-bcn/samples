@@ -2,4 +2,10 @@ const f = () => {
   console.log(a);
 };
 
-f();
+try {
+  f();
+} catch (e) {
+  console.log("Oops... an error has ocurred:");
+  console.log(`- Name:    "${e.name}"`);
+  console.log(`- Message: "${e.message}"`);
+}

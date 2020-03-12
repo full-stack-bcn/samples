@@ -1,6 +1,6 @@
 function StupidError(message) {
   this.name = "StupidError";
-  this.message = message || "Has comès un error estúpid, chaval!";
+  this.message = message || "You made a stupid mistake, fellow human!";
   this.stack = new Error().stack;
 }
 StupidError.prototype = Object.create(Error.prototype);
