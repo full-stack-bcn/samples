@@ -16,12 +16,12 @@ class Person {
 }
 
 // Create a new person
-let _ = new Person("James", "Bond");
+let person = new Person("James", "Bond");
 
 // Use the getter
-console.log(_.fullName);
+console.log(person.fullName);
 
 // Use the setter
-_.fullName = "Fulanito Pérez";
-console.log(_.firstName);
-console.log(_.lastName);
+person.fullName = "Fulanito Pérez";
+console.log(person.firstName);
+console.log(person.lastName);
