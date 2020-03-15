@@ -1,0 +1,9 @@
+
+.important {
+  padding: 1em 1.4em;
+  display: inline-block;
+  background-color: yellow;
+}
+
+/* Webpack sees this imports, too */
+@import url(extra.css);
