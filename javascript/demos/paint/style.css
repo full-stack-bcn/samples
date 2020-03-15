@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  position: fixed;
+  bottom: 0;
+  border: 1px solid black;
+}
+#toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40;
+  padding-left: .3em;
+}
+#toolbar * {
+  margin-right: .3em;
+}
+#toolbar .color {
+  padding: .5em;
+  border: 1px solid white;
+}
+#toolbar .color:hover {
+  border: 1px solid black;
+}
+.color {
+  box-sizing: border-box;
+  width: 30;
+  height: 30;
+  background-color: gray;
+  margin-right: 1px;
+}
