@@ -12,17 +12,20 @@ canvas {
   flex-direction: row;
   align-items: center;
   height: 40;
-  padding-left: .3em;
+  padding-left: 0.3em;
 }
 #toolbar * {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 #toolbar .color {
-  padding: .5em;
-  border: 1px solid white;
+  padding: 0.5em;
+  border: 2px solid white;
 }
 #toolbar .color:hover {
-  border: 1px solid black;
+  border: 2px solid #aaa;
+}
+#toolbar .color.active {
+  border: 2px solid black;
 }
 .color {
   box-sizing: border-box;
@@ -30,4 +33,14 @@ canvas {
   height: 30;
   background-color: gray;
   margin-right: 1px;
+}
+.figure {
+  padding: 0.3em;
+  cursor: pointer;
+}
+.figure:hover {
+  background-color: #eee;
+}
+.figure.active {
+  border: 1px solid black;
 }

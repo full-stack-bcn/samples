@@ -1,13 +1,27 @@
+// References to DOM elements
 const canvas = document.querySelector("canvas");
+const toolbar = document.getElementById("toolbar");
+
+// Constants
+const colors = ["red", "green", "blue", "yellow", "orange", "pink"];
+const figureTypes = [Rectangle, Ellipse];
+
+// Global state
+let current = { figure: Rectangle, color: "red" };
+let initialPoint;
+let preview;
+let figures = [];
+
+const pointFromEvent = ({ offsetX: x, offsetY: y }) => ({ x, y });
+const pointDifference = ({ x: x1, y: y1 }, { x: x2, y: y2 }) => ({
+  width: x2 - x1,
+  height: y2 - y1
+});
 
 const resize = () => {
   canvas.width = window.innerWidth - 2;
   canvas.height = window.innerHeight - 2 - 40;
 };
-
-let preview;
-let figures = [];
-let currentColor = "red";
 
 const repaint = () => {
   const ctx = canvas.getContext("2d");
@@ -23,31 +37,28 @@ const update = () => {
   repaint();
 };
 
-update();
+// Events
 
-// Resize the canvas and repaint every time the window resizes
-window.addEventListener("resize", update);
+window.addEventListener("resize", update); // Resize the canvas and repaint every time the window resizes
 
 canvas.addEventListener("click", event => {});
 
-const pointFromEvent = ({ offsetX, offsetY }) => ({ x: offsetX, y: offsetY });
-const pointDifference = ({ x: x1, y: y1 }, { x: x2, y: y2 }) => ({
-  width: x2 - x1,
-  height: y2 - y1
-});
-
-let initialPoint;
 canvas.onmousedown = e => {
   initialPoint = pointFromEvent(e);
-  preview = new Rectangle(initialPoint, { width: 0, height: 0 }, currentColor);
+  preview = new (current.figure)(
+    initialPoint,
+    { width: 0, height: 0 },
+    current.color
+  );
 };
+
 canvas.onmousemove = e => {
   if (preview) {
-    const currentPoint = ;
     preview.size = pointDifference(initialPoint, pointFromEvent(e));
     repaint();
   }
 };
+
 canvas.onmouseup = e => {
   figures.push(preview);
   repaint();
@@ -55,22 +66,46 @@ canvas.onmouseup = e => {
   preview = null;
 };
 
-const colors = ["red", "green", "blue", "yellow", "orange", "pink"];
-const figureTypes = [Rectangle]; //, Line, Ellipse];
+// DOM creation (toolbar)
+
+const clearActiveButtons = _class => {
+  toolbar.querySelectorAll(`div.${_class}`).forEach(elem => {
+    elem.classList.remove("active");
+  });
+};
 
 const makeColorButton = color => {
   const button = document.createElement("div");
   button.classList.add("color");
+  if (color === current.color) {
+    button.classList.add('active');
+  }
   button.style.backgroundColor = color;
   button.onclick = () => {
-    currentColor = color;
-    console.log(currentColor);
+    current.color = color;
+    clearActiveButtons("color");
+    button.classList.add("active");
   };
   return button;
 };
 
+const makeFigureButton = figure => {
+  const button = document.createElement("div");
+  button.classList.add("figure");
+  if (figure === current.figure) {
+    button.classList.add('active');
+  }
+  button.textContent = figure.name;
+  button.onclick = () => {
+    current.figure = figure;
+    clearActiveButtons("figure");
+    button.classList.add("active");
+  };
+  console.log(button);
+  return button;
+};
+
 const createToolbar = () => {
-  const toolbar = document.getElementById("toolbar");
   toolbar.append(...colors.map(makeColorButton));
 
   const eraseButton = document.createElement("button");
@@ -80,6 +115,9 @@ const createToolbar = () => {
     repaint();
   };
   toolbar.appendChild(eraseButton);
+
+  toolbar.append(...figureTypes.map(makeFigureButton));
 };
 
 createToolbar();
+update();
