@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Chip = ({ id, first, children }) => {
+const Chip = ({ first, children }) => {
   const { center, chip } = styles;
   return (
-    <View key={id} style={[chip, center, { marginLeft: first ? 0 : 5 }]}>
+    <View style={[chip, center, { marginLeft: first ? 0 : 5 }]}>
       {children}
     </View>
   );
@@ -17,7 +17,7 @@ export default function App() {
     <View style={[page, center]}>
       <View style={[chips, center]}>
         {tags.map((tag, i) => (
-          <Chip id={tag} first={i === 0}>
+          <Chip key={i} first={i === 0}>
             <Text>{tag}</Text>
           </Chip>
         ))}
