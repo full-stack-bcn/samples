@@ -46,13 +46,14 @@ const styles = StyleSheet.create({
     paddingBottom: 8
   },
   amount: {
-    fontWeight: "bold",
+    fontFamily: "Montserrat-Bold",
     fontSize: 22
   },
   concept: {
-    fontWeight: "bold"
+    fontFamily: "Montserrat-Bold"
   },
   units: {
+    fontFamily: "Montserrat-Regular",
     color: "#777"
   }
 });
