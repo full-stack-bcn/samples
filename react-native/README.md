@@ -10,7 +10,7 @@ Samples about painting the screen using basic components (``View``, ``Text``, ``
 3. [Chips](https://github.com/full-stack-bcn/samples/tree/master/react-native/chips).
 4. [Poker Card](https://github.com/full-stack-bcn/samples/tree/master/react-native/pokercard).
 
-Samples about simple components which are combinations of basic components plus maybe some simple state:
+Samples about components which are combinations of basic components (some with simple state):
 
 1. [Nutrition Fact](https://github.com/full-stack-bcn/samples/tree/master/react-native/nutrition-fact).
 2. [Checkout Button](https://github.com/full-stack-bcn/samples/tree/master/react-native/checkout-button).
