@@ -1,6 +1,6 @@
 
-# React Native Sample: Poker Card
+# React Native Sample: Custom Fonts
 
-A simple example of showing the Ace of Spades:
+How to use a custom font (using ``expo``):
 
 ![Screenshot](screenshot.png)
