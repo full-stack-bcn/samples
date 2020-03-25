@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
 
-const QuantityEdit = () => {
+const QuantityEdit = ({ onChange }) => {
   const [quantity, setQuantity] = useState(0);
 
-  const incr = () => setQuantity(quantity + 1);
-  const decr = () => setQuantity(quantity > 0 ? quantity - 1 : quantity);
-
+  const incr = () => {
+    setQuantity(quantity + 1);
+    onChange(quantity + 1);
+  }
+  const decr = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+      onChange(quantity - 1);
+    }
+  }
+  
   const {
     outer,
     center,
