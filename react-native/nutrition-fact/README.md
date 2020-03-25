@@ -1,6 +1,6 @@
 
-# React Native Sample: Poker Card
+# React Native Sample: Nutrition Fact
 
-A simple example of showing the Ace of Spades:
+A simple example showing several nutrition facts in a nice visual style:
 
 ![Screenshot](screenshot.png)
