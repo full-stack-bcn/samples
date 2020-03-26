@@ -3,25 +3,25 @@
 
 ## Painting the screen
 
-Samples about painting the screen using basic components (``View``, ``Text``, ``Image``):
+Painting the screen using basic components (``View``, ``Text``, ``Image``):
 
 1. [Semaphore](https://github.com/full-stack-bcn/samples/tree/master/react-native/semaphore).
 2. [Numbers](https://github.com/full-stack-bcn/samples/tree/master/react-native/numbers).
 3. [Chips](https://github.com/full-stack-bcn/samples/tree/master/react-native/chips).
 4. [Poker Card](https://github.com/full-stack-bcn/samples/tree/master/react-native/pokercard).
 
-Samples about components which are combinations of basic components (some with simple state):
+Components made of basic components (some with simple state):
 
 1. [Nutrition Fact](https://github.com/full-stack-bcn/samples/tree/master/react-native/nutrition-fact).
 2. [Checkout Button](https://github.com/full-stack-bcn/samples/tree/master/react-native/checkout-button).
 3. [Quantity Editor](https://github.com/full-stack-bcn/samples/tree/master/react-native/quantity-editor).
 
-How to do certain things:
+Other:
 
 1. [Use custom fonts](https://github.com/full-stack-bcn/samples/tree/master/react-native/custom-fonts).
 
 ## Routes
 
-Navigating from one screen to another:
+Navigating between screens:
 
 1. [Routes](https://github.com/full-stack-bcn/samples/tree/master/react-native/routes).
