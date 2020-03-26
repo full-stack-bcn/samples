@@ -19,3 +19,9 @@ Samples about components which are combinations of basic components (some with s
 How to do certain things:
 
 1. [Use custom fonts](https://github.com/full-stack-bcn/samples/tree/master/react-native/custom-fonts).
+
+## Routes
+
+Navigating from one screen to another:
+
+1. [Routes](https://github.com/full-stack-bcn/samples/tree/master/react-native/routes).
