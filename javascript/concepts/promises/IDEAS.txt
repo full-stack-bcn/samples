@@ -1,0 +1,10 @@
+- Pasar una función de usar callbacks a Promises.
+- Encadenación de Promises. (varios thens).
+- Ejemplo de Promise hecha por el usuario.
+ 
+- Esto muestra algo por pantalla??
+
+     const P = new Promise((resolve, reject) => {
+       console.log("hi");
+     });
+
