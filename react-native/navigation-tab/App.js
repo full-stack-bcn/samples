@@ -1,23 +1,38 @@
 import "react-native-gesture-handler";
 
 import React from "react";
-import HomeScreen from "./screens/HomeScreen";
-import LeftScreen from "./screens/LeftScreen";
-import RightScreen from "./screens/RightScreen";
-
-import { NavigatorContainer } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+import { UserScreen, HomeScreen, SettingsScreen } from "./screens";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigatorContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Left" component={LeftScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Right" component={RightScreen} />
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="home"
+        tabBarOptions={{
+          showLabel: false
+        }}
+      >
+        <Tab.Screen
+          name="left"
+          component={UserScreen}
+          options={{ tabBarIcon: UserScreen.Icon }}
+        />
+        <Tab.Screen
+          name="home"
+          component={HomeScreen}
+          options={{ tabBarIcon: HomeScreen.Icon }}
+        />
+        <Tab.Screen
+          name="right"
+          component={SettingsScreen}
+          options={{ tabBarIcon: SettingsScreen.Icon }}
+        />
       </Tab.Navigator>
-    </NavigatorContainer>
+    </NavigationContainer>
   );
 }

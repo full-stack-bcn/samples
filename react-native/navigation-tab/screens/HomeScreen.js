@@ -1,14 +1,18 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { Text, View } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+import commonStyles from "../common-styles";
 
-function HomeScreen() {
+const HomeScreen = () => {
   return (
-    <View>
+    <View style={[commonStyles.page, { backgroundColor: "#fff" }]}>
       <Text>Home</Text>
     </View>
-  )
-}
+  );
+};
 
-export default HomeScreen
+HomeScreen.Icon = ({ color }) => (
+  <FontAwesome name="home" size={24} color={color} />
+);
 
-const styles = StyleSheet.create({})
+export default HomeScreen;

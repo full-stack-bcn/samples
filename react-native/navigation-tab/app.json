@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "navigation-tab",
-    "slug": "navigation-tab",
+    "name": "nav-tab",
+    "slug": "nav-tab",
     "platforms": [
       "ios",
       "android",
