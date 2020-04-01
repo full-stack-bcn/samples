@@ -20,8 +20,9 @@ Other:
 
 1. [Use custom fonts](https://github.com/full-stack-bcn/samples/tree/master/react-native/custom-fonts).
 
-## Routes
+## Navigation
 
 Navigating between screens:
 
-1. [Routes](https://github.com/full-stack-bcn/samples/tree/master/react-native/routes).
+1. [Stack](https://github.com/full-stack-bcn/samples/tree/master/react-native/navigation-stack).
+2. [Bottom Tabs](https://github.com/full-stack-bcn/samples/tree/master/react-native/navigation-tab).
