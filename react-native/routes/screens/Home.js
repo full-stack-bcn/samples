@@ -4,7 +4,7 @@ import { Separator } from "../components";
 import { TextInput } from "react-native-gesture-handler";
 
 const Home = ({ navigation }) => {
-  const [value, setValue] = useState(7);
+  const [value, setValue] = useState("hi");
 
   const goToScreenA = () => {
     // To navigate to a screen we use the screen 'name'
@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
   };
   const goToScreenB = () => {
     // To pass parameters you add them to the navigate call
-    navigation.navigate("B", { value: value });
+    navigation.navigate("B", { value });
   };
 
   return (

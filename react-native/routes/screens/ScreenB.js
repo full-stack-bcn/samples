@@ -6,7 +6,7 @@ const ScreenB = ({ route }) => {
   return (
     <View style={styles.page}>
       <Text style={styles.text}>This is screen B!</Text>
-      <Text>(You gave me {value}...)</Text>
+      <Text>(You gave me "{value}"...)</Text>
     </View>
   );
 };
