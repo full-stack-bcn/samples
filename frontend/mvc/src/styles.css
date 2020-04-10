@@ -1,0 +1,42 @@
+body {
+  padding: 1em;
+  font-family: sans-serif;
+}
+button {
+  font-size: 1rem;
+}
+form input[type="text"] {
+  margin-right: 1em;
+  width: 20em;
+  padding: 6px;
+  font-size: 1rem;
+}
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+.todo-list li {
+  padding: .5em;
+  width: 25em;
+  display: flex;
+  align-items: 'center';
+  border-bottom: 1px solid #eee;
+}
+.todo-list input[type="checkbox"] {
+  margin-right: 0.8em;
+}
+.todo-list span {
+  flex: 1;
+}
+.todo-list span.done {
+  text-decoration: line-through;
+}
+button.delete {
+  color: #777;
+  border: none;
+  background-color: white;
+  border: 1px solid white;
+}
+button.delete:hover {
+  border: 1px solid #ccc;
+}
