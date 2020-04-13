@@ -1,6 +1,7 @@
-import './styles.css';
+import "./styles.css";
 
-const create = (type, className) => {
+// Create a DOM element with a certain type and an optional class
+const _make = (type, className) => {
   const elem = document.createElement(type);
   if (className) {
     elem.classList.add(className);
@@ -10,28 +11,33 @@ const create = (type, className) => {
 
 export default class View {
   constructor() {
-    this.root = document.getElementById("root");
-    this.root.append(this._buildTitle(), this._buildForm(), this._buildList());
+    const root = document.getElementById("root");
+    root.append(this._buildTitle(), this._buildForm(), this._buildList());
+    this.presenter = null;
+  }
+
+  setPresenter(presenter) {
+    this.presenter = presenter;
   }
 
   _buildTitle() {
-    const h1 = create("h1");
+    const h1 = _make("h1");
     h1.textContent = "Todo List";
     return h1;
   }
 
   _buildForm() {
-    const form = create("form");
-    const input = create("input");
+    const form = _make("form");
+    const input = _make("input");
     input.type = "text";
-    const submit = create("button");
+    const submit = _make("button");
     submit.textContent = "Add Todo";
     form.append(input, submit);
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (this.on.add) {
-        this.on.add(input.value);
+      if (this.presenter) {
+        this.presenter.onAdd(input.value);
         input.value = "";
       }
     });
@@ -40,68 +46,63 @@ export default class View {
 
   _buildList() {
     let tmpText = "";
-    this.ul = create("ul", "todo-list");
+    this.ul = _make("ul", "todo-list");
 
-    this.ul.addEventListener('input', (e) => {
+    const elemIndex = (node) => parseInt(node.parentElement.id);
+
+    this.ul.addEventListener("input", (e) => {
       if (e.target.contentEditable === "true") {
         tmpText = e.target.innerText;
       }
     });
     this.ul.addEventListener("click", (e) => {
       if (e.target.type === "submit") {
-        if (this.on.remove) {
-          const i = parseInt(e.target.parentElement.id);
-          this.on.remove(i);
+        if (this.presenter) {
+          this.presenter.onRemove(elemIndex(e.target));
         }
       }
     });
     this.ul.addEventListener("change", (e) => {
       if (e.target.type === "checkbox") {
-        if (this.on.toggle) {
-          const i = parseInt(e.target.parentElement.id);
-          this.on.toggle(i);
+        if (this.presenter) {
+          this.presenter.onToggle(elemIndex(e.target));
         }
       }
-    })
-    this.ul.addEventListener('focusout', (e) => {
-      if (tmpText && this.on.edit) {
-        const i = parseInt(e.target.parentElement.id);
-        this.on.edit(i, tmpText);
+    });
+    this.ul.addEventListener("focusout", (e) => {
+      if (tmpText && this.presenter) {
+        this.presenter.onEdit(elemIndex(e.target), tmpText);
         tmpText = "";
       }
-    })
+    });
 
     return this.ul;
   }
 
   _buildTodo(todo, i) {
-    const li = create("li");
+    const li = _make("li");
     li.id = `${i}`;
 
-    const checkbox = create("input");
+    const checkbox = _make("input");
     checkbox.type = "checkbox";
     checkbox.checked = todo.done;
 
-    const text = create("span");
+    const text = _make("span");
+    text.textContent = todo.text;
     text.contentEditable = true;
     if (todo.done) {
       text.classList.add("done");
     }
-    text.textContent = todo.text;
 
-    const delButton = create("button", "delete");
+    const delButton = _make("button", "delete");
     delButton.innerHTML = "&#x274C;";
 
     li.append(checkbox, text, delButton);
     return li;
   }
 
-  on(eventName, callback) {
-    this.on[eventName] = callback;
-  }
-
   render(todos) {
-    this.ul.textContent = '';
+    this.ul.textContent = "";
     this.ul.append(...todos.map(this._buildTodo.bind(this)));
   }
 }

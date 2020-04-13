@@ -1,17 +1,45 @@
 import Model from "./model";
 import View from "./view";
 
-const Controller = (model, view) => {
-  view.render(model.todos);
+class Presenter {
+  constructor(model, view) {
+    this.model = model;
+    this.view = view;
+    this.view.setPresenter(this);
+    this.model.onChange(this.onModelChange.bind(this));
 
-  view.on('add', (text) => model.add(text));
-  view.on('remove', (i) => model.remove(i));
-  view.on('toggle', (i) => model.toggle(i));
-  view.on('edit', (i, newText) => model.edit(i, newText));
+    this.view.render(this.model.todos);
+  }
 
-  model.onChange(() => {
-    view.render(model.todos);
-  });
-};
+  // Computation 1: Translate events to changes in the model
+  onAdd(text) {
+    if (text) {
+      this.model.add(text);
+    }
+  }
+  onRemove(i) {
+    this.model.remove(i);
+  }
+  onToggle(i) {
+    this.model.toggle(i);
+  }
+  onEdit(i, text) {
+    this.model.edit(i, text);
+  }
 
-Controller(new Model(), new View());
+  // Computation 2: Produce a visual representation of the model
+  onModelChange() {
+    // Preprocess the data that the view will  show?
+    this.view.render(this.model.todos);
+  }
+}
+
+// Create the three main components (MVP)
+const model = new Model();
+const view = new View();
+const presenter = new Presenter(model, view);
+
+// Make these objects accessible through the browser console
+window.model = model;
+window.view = view;
+window.presenter = presenter;

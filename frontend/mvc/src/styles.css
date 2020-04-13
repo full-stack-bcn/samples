@@ -19,7 +19,7 @@ form input[type="text"] {
   padding: .5em;
   width: 25em;
   display: flex;
-  align-items: 'center';
+  align-items: center;
   border-bottom: 1px solid #eee;
 }
 .todo-list input[type="checkbox"] {
