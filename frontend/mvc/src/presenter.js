@@ -1,7 +1,4 @@
-import Model from "./model";
-import View from "./view";
-
-class Presenter {
+export default class Presenter {
   constructor(model, view) {
     this.model = model;
     this.view = view;
@@ -33,13 +30,3 @@ class Presenter {
     this.view.render(this.model.todos);
   }
 }
-
-// Create the three main components (MVP)
-const model = new Model();
-const view = new View();
-const presenter = new Presenter(model, view);
-
-// Make these objects accessible through the browser console
-window.model = model;
-window.view = view;
-window.presenter = presenter;
