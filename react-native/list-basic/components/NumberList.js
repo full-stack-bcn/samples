@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView, View, FlatList } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
-const generateList = (len) => {
+const generateNumberList = (length) => {
   let array = [];
-  for (let i = 0; i < len; i++) {
-    array.push({ text: `Item ${i + 1}`, id: i });
+  for (let i = 0; i < length; i++) {
+    // All data objects need a 'key' property (passed to React)
+    array.push({ key: `${i}`, text: `Item ${i + 1}` });
   }
   return array;
 };
@@ -17,9 +18,9 @@ const renderItem = ({ item }) => (
 
 const Separator = () => <View style={styles.separator}></View>;
 
-const NumberList = ({ len }) => (
+const NumberList = ({ length }) => (
   <FlatList
-    data={generateList(len)}
+    data={generateNumberList(length)}
     renderItem={renderItem}
     ItemSeparatorComponent={Separator}
   />

@@ -17,7 +17,7 @@ const MainPage = () => {
   const insets = useSafeArea();
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-      <NumberList len={100} />
+      <NumberList length={100} />
     </View>
   );
 };
