@@ -38,6 +38,7 @@ const UserList = () => {
       data={users}
       renderItem={({ item: user }) => <User {...user} />}
       ItemSeparatorComponent={Separator}
+      keyExtractor={user => user.email}
     />
   );
 };
