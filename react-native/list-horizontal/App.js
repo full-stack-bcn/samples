@@ -7,6 +7,7 @@ const sequences = {
   ["Even numbers"]: [2, 4, 6, 8, 10, 12],
   ["Odd numbers"]: [1, 3, 5, 7, 9, 11, 13],
   ["Random numbers"]: [5, 2, 9, 7, 3, 1, 0, 10],
+  ["All zeros"]: [0, 0, 0, 0, 0, 0],
 };
 
 const numberWords = [
@@ -22,26 +23,26 @@ const numberWords = [
   "nine",
   "ten",
   "eleven",
-  "twelve", 
+  "twelve",
   "thirteen",
 ];
 
-const NumberCard = ({ id, num }) => (
+const NumberCard = ({ word, num }) => (
   <View>
     <View style={styles.numberCard}>
       <Text style={styles.cardNum}>{num}</Text>
     </View>
     <View height={5} />
-    <Text>{id}</Text>
+    <Text>{word}</Text>
   </View>
 );
 
-const NumberList = ({ title, numList }) => (
+const NumberList = ({ title, numbers }) => (
   <View>
     <View height={20} />
     <Text style={styles.title}>{title}</Text>
     <FlatList
-      data={numList}
+      data={numbers}
       ListHeaderComponent={() => <View width={20} />}
       ListFooterComponent={() => <View width={20} />}
       renderItem={({ item }) => <NumberCard {...item} />}
@@ -55,12 +56,16 @@ export default function App() {
   return (
     <ScrollView>
       <View height={30} />
-      {Object.entries(sequences).map(([name, numList], index) => {
+      {Object.entries(sequences).map(([title, numbers], index) => {
         return (
           <NumberList
             key={index}
-            title={name}
-            numList={numList.map((n) => ({ id: numberWords[n], num: n }))}
+            title={title}
+            numbers={numbers.map((n, index) => ({
+              id: `${index}`,
+              word: numberWords[n],
+              num: n,
+            }))}
           />
         );
       })}
