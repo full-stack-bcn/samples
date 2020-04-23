@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+// Install first the "@use-expo/font" package (npm install / yarn add)
 import { useFonts } from "@use-expo/font";
 import { AppLoading } from "expo";
 
