@@ -1,10 +1,19 @@
 import { types } from "../actions";
 
 const initialState = {
-  todos: [{ id: 0, text: "test", done: false }],
+  todos: [],
 };
 
-let lastID = 0;
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const numbers = "0123456789";
+const symbols = numbers + alphabet + alphabet.toUpperCase();
+const genUUID = () => {
+  let uuid = "";
+  for (let i = 0; i < 10; i++) {
+    uuid += symbols[Math.floor(Math.random() * symbols.length)];
+  }
+  return uuid;
+}
 
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -13,7 +22,7 @@ export const rootReducer = (state = initialState, action) => {
         ...state,
         todos: [
           ...state.todos,
-          { id: ++lastID, text: action.payload, done: false },
+          { id: genUUID(), text: action.payload, done: false },
         ],
       };
     case types.REMOVE_TODO:
