@@ -1,3 +1,5 @@
+import { ADD_ARTICLE } from "../types/action-types";
+
 const forbiddenWords = ["spam", "money"];
 export const forbiddenWordsMiddleware = 
   ({ dispatch }) => next => action => {

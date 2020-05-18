@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { v1 as uuidv1 } from 'uuid';
-import { addArticle } from "../store";
+import { addArticle } from "../actions";
 
 class ToBeConnectedForm extends React.Component {
   constructor(props) { super(props); this.state = { title: "" }; }
