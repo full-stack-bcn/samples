@@ -1,0 +1,7 @@
+import { ADD_ARTICLE } from "../types/action-types";
+export default function rootReducer ( prevState, action) {
+  if (action.type === ADD_ARTICLE) {
+    return { ...prevState, articles: [ ...prevState.articles, action.payload ]};
+  }
+  return prevState;
+}
