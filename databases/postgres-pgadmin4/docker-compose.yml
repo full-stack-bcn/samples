@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fullstack}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fullstack123}
+      POSTGRES_DB: ${POSTGRES_DB:-playground}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres_vol:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - postgres_net
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-fullstack@upc.edu}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-fullstack123}
+    volumes:
+      - pgadmin_vol:/root/.pgadmin
+    ports:
+      - ${PGADMIN_PORT:-5050}:80
+    networks:
+      - postgres_net
+
+networks:
+  postgres_net:
+    driver: bridge
+
+volumes:
+  postgres_vol:
+  pgadmin_vol:
