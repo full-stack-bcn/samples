@@ -18,6 +18,3 @@ export const store = createStore(
   initialState, 
   window.__REDUX_DEVTOOLS_EXTENSION__() 
 );
-
-window.store = store;
-window.addArticle = addArticle;
