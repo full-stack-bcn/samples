@@ -7,5 +7,4 @@ export const getData = () => async dispatch => {
       dispatch({ type: "LOADING_DATA" });
       const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
       dispatch({ type: "DATA_LOADED", payload: response.data });
-      return 'done';
-  }
+      }
