@@ -3,8 +3,13 @@ import axios from 'axios';
 
 export const addArticle = payload => ({ type: ADD_ARTICLE, payload });
 
+
 export const getData = () => async dispatch => {
       dispatch({ type: "LOADING_DATA" });
-      const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      dispatch({ type: "DATA_LOADED", payload: response.data });
+      try {
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+        dispatch({ type: "DATA_LOADED", payload: response.data });
+      } catch(error){ 
+        dispatch({ type: "ERROR_LOADING_DATA", payload: error.message })
       }
+  }
