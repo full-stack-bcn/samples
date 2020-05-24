@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
+    "start": "node src/server.js",
     "dev": "node-dev src/server.js"
   },
   "keywords": [
