@@ -1,8 +1,19 @@
 import { types } from "./types";
 
-export const addTodo = (todo) => ({
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const numbers = "0123456789";
+const symbols = numbers + alphabet + alphabet.toUpperCase();
+const genUUID = () => {
+  let uuid = "";
+  for (let i = 0; i < 10; i++) {
+    uuid += symbols[Math.floor(Math.random() * symbols.length)];
+  }
+  return uuid;
+}
+
+export const addTodo = (text) => ({
   type: types.ADD_TODO,
-  payload: todo,
+  payload: { id: genUUID(), text, done: false },
 });
 
 export const removeTodo = (id) => ({
