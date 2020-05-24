@@ -2,7 +2,7 @@ const { Router } = require("express");
 const db = require("../db");
 const api = Router();
 
-const SIMULATED_DELAY = 200;
+const SIMULATED_DELAY = 0;
 const simulatedDelay = () => {
   return new Promise(resolve => setTimeout(resolve, SIMULATED_DELAY));
 }
@@ -74,7 +74,6 @@ api.delete("/todos/:id", async (req, res) => {
   try {
     await simulatedDelay();
     const { id } = req.params;
-    console.log("delete", id);
     const { rows } = await db.query({
       text: `
         DELETE FROM todos WHERE id = $1 
@@ -82,7 +81,6 @@ api.delete("/todos/:id", async (req, res) => {
       `,
       values: [id],
     });
-    console.log(rows);
     res.json(rows[0]);
   } catch (e) {
     res.json({ error: e.toString() });
