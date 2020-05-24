@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: todos_postgres
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-todos123}
+      POSTGRES_DB: ${POSTGRES_DB:-todos}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres_vol:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - postgres_net
+  
+  pgadmin:
+    container_name: todos_pgadmin4
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@todos.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-todos123}
+    volumes:
+      - pgadmin_vol:/root/.pgadmin
+    ports:
+      - ${PGADMIN_PORT:-5050}:80
+    networks:
+      - postgres_net
+
+networks:
+  postgres_net:
+    driver: bridge
+
+volumes:
+  postgres_vol:
+  pgadmin_vol:

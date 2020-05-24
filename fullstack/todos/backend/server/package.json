@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "node-dev src/server.js"
+  },
+  "keywords": [
+    "todos",
+    "fullstack"
+  ],
+  "author": "pauek",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "node-dev": "^4.0.0"
+  }
+}

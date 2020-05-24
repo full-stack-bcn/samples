@@ -1,0 +1,17 @@
+
+ul.todolist {
+  list-style-type: none;
+  padding: 0;
+}
+ul.todolist li {
+  padding: 1rem;
+}
+ul.todolist li input[type=checkbox] {
+  margin-right: .6rem;
+}
+ul.todolist li {
+  cursor: pointer;
+}
+ul.todolist li .done {
+  text-decoration: line-through;
+}
