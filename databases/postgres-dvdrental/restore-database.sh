@@ -1,2 +1,2 @@
 #!/bin/bash
-PGUSER=postgres PGDATABASE=postgres PGHOST=localhost PGPASSWORD=postgres PGPORT=5432 psql -f ./dump/restore.sql
+docker exec -it postgres_dvdrental psql -U postgres -f /data/dump/restore.sql
