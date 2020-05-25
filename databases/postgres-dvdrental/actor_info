@@ -1,0 +1,122 @@
+\?
+\?
+\l
+\t
+\t
+\d
+create table users (id integer primary key serial, first varchar, last varchar, age integer);
+create table users (id integer primary key, first varchar, last varchar, age integer);
+\d
+copy users to stdout (delimiter '|');
+copy users to stdout (delimiter ';');
+\d
+\l
+\d
+select * from users;
+\d
+\q
+\d
+\t
+\l
+\d
+select * from users;
+select * from comments;
+insert into comments values (2, 7, 'hi hi');
+select * from comments;
+\d+
+\d
+\d+
+\d
+\t
+\l
+\d
+select * from users;
+select * from emails
+;
+select * from emails;
+select * from users, emails where users.id = emails.user_id;
+\d
+\l
+\t
+\d
+use database playground;
+select sha256('abc');
+select sha256('123123123');
+SELECT pg_reload_conf();
+\?
+\! ls
+\d
+\l
+\c postgres
+\d
+\t
+\t
+\l
+\s
+\?
+\dn
+\c playground
+\dn
+\?
+\dx
+\dn
+\?
+select * from pg_available_extensions;
+select * from pg_available_extensions;
+select * from pg_available_extensions;
+select * from pg_available_extensions where name like 'pl%';
+select * from pg_available_extensions where name like 'pl%';
+select * from pg_available_extensions order by name;
+CREATE EXTENSION hstore;
+\dx
+\dt+ pg_catalog.pg_t*
+select * from pg_catalog.pg_tablespace ;
+select * from todos;
+select * from todos;
+select * from todos order by id;
+select * from todos order by id;
+select * from todos;
+select * from todos;
+update todos set done = true where id = 3;
+select * from todos;
+update todos set done = t where id = 3;
+update todos set done = true where id = 7;
+select * from todos;
+update todos set done = true where id = 5;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+select * from todos;
+CREATE DATABASE dvdrental;
+\c dvdrental
+CREATE ROLE admin WITH CREATEDB CREATEROLE;
+CREATE ROLE postgres WITH CREATEDB CREATEROLE;
+CREATE DATABASE dvdrental;
+CREATE ROLE postgres WITH LOGIN PASSWORD 'postgres' CREATEDB CREATEROLE;
+DROP ROLE postgres;
+CREATE ROLE postgres WITH LOGIN PASSWORD 'postgres' CREATEDB CREATEROLE;
+select * from todos;
+select upper(text) from todos;
+ALTER ROLE postgres WITH SUPERUSER;
+drop database dvdrental;
+\c dvdrental 
+\d
+\l
+select * from actor;
+select * from actor where last_name = 'Keitel';
+drop database dvdrental;
+drop database dvdrental;
+drop database dvdrental;
+\c dvdrental
+\l
+\d
+select * from actor_info;
+select actor_info.name from actor_info;
+\s
+\s actor_info
