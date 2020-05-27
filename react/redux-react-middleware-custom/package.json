@@ -1,5 +1,5 @@
 {
-  "name": "simple-middleware-redux",
+  "name": "redux-react-middleware-custom",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

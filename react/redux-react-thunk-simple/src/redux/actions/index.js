@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from "../types/action-types";
+import { ADD_ARTICLE } from "../types";
 import axios from 'axios';
 
 export const addArticle = payload => ({ type: ADD_ARTICLE, payload });

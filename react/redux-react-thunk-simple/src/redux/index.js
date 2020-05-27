@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import rootReducer from "../reducers";
-import { forbiddenWordsMiddleware } from "../middlewares";
+import rootReducer from "./reducers";
+import { forbiddenWordsMiddleware } from "./middlewares";
 import thunk from "redux-thunk";
 
 const initialState = { articles: [], remoteArticles: [] } ; 
