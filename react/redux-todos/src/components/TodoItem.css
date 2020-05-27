@@ -1,0 +1,20 @@
+li.item {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+li.item:hover {
+  outline: 1px solid #ddd;
+}
+li.item input[type="checkbox"] {
+  margin-right: 1rem;
+}
+span.remove {
+  color: #ccc;
+}
+span.remove:hover {
+  color: #777;
+}

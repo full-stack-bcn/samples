@@ -1,0 +1,48 @@
+
+ul.todolist {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+ul.todolist li {
+  display: inline-flex;
+  flex-direction: row;
+  padding: .5rem;
+  border-radius: 5px;
+  margin-bottom: .2rem;
+}
+ul.todolist li span.spacer {
+  flex: 1;
+}
+ul.todolist li input[type=checkbox] {
+  margin-right: .6rem;
+}
+ul.todolist li {
+  cursor: pointer;
+}
+ul.todolist li .done {
+  text-decoration: line-through;
+}
+
+ul.todolist li.updating {
+  background-color: rgba(255, 187, 0, 0.2);
+}
+
+ul.todolist li.deleting {
+  background-color: rgba(218, 30, 13, 0.2);
+}
+
+ul.todolist li.adding {
+  background-color: rgba(0, 128, 0, 0.15);
+}
+ul.todolist li.adding input[type=checkbox] {
+  background-color: rgba(0, 128, 0, 0.15);
+}
+
+.todolist li span.remove {
+  color: #ccc;
+}
+.todolist li span.remove:hover {
+  color: #777;
+}
