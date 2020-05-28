@@ -4,7 +4,6 @@ import * as db from "../db.mjs";
 const api = express.Router();
 
 api.get("/todos", async (req, res) => {
-  console.log("/todos");
   try {
     const { rows } = await db.query({
       text: `SELECT * FROM todos`,
