@@ -1,11 +1,14 @@
+
+const BASE_URL = "http://localhost:8080";
+
 export const loadTodos = async () => {
-  const response = await fetch(`http://localhost:8080/api/todos`);
+  const response = await fetch(`${BASE_URL}/api/todos`);
   const todos = await response.json();
   return todos;
 };
 
 export const addTodo = async (text) => {
-  const response = await fetch(`http://localhost:8080/api/todos`, {
+  const response = await fetch(`${BASE_URL}/api/todos`, {
     method: "POST",
     mode: "cors",
     headers: { "Content-Type": "application/json" },
@@ -16,7 +19,7 @@ export const addTodo = async (text) => {
 };
 
 export const updateTodo = async (todo) => {
-  const response = await fetch(`http://localhost:8080/api/todos/${todo.id}`, {
+  const response = await fetch(`${BASE_URL}/api/todos/${todo.id}`, {
     method: "PUT",
     mode: "cors",
     headers: { "Content-Type": "application/json" },
@@ -28,7 +31,7 @@ export const updateTodo = async (todo) => {
 
 export const deleteTodo = async (id) => {
   console.log("Delete", id);
-  const response = await fetch(`http://localhost:8080/api/todos/${id}`, {
+  const response = await fetch(`${BASE_URL}/api/todos/${id}`, {
     method: "DELETE",
     mode: "cors",
   });
