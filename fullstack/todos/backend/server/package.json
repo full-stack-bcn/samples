@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node src/server.mjs",
-    "dev": "nodemon src/server.mjs"
+    "dev": "nodemon --ignore node_modules src/server.mjs"
   },
   "keywords": [
     "todos",
