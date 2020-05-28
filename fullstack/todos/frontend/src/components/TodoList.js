@@ -7,8 +7,8 @@ class TodoList extends Component {
   render() {
     const {
       todos,
-      todosLoading,
-      todosError,
+      loading,
+      error,
       toggleDone,
       deleteTodo,
     } = this.props;
@@ -18,11 +18,11 @@ class TodoList extends Component {
       deleteTodo(todo);
     };
 
-    if (todosLoading) {
+    if (loading) {
       return <div>Loading...</div>;
     }
-    if (todosError) {
-      return <div>ERROR: {todosError.toString()}</div>;
+    if (error) {
+      return <div>ERROR: {error.error}</div>;
     }
     return (
       <ul className="todolist">
@@ -60,8 +60,8 @@ class TodoList extends Component {
 
 const mapStateToProps = (state) => ({
   todos: state.todos,
-  todosLoading: state.todosLoading,
-  todosError: state.todosError,
+  loading: state.todosLoading,
+  error: state.error,
 });
 
 const mapDispatchToProps = (dispatch) => ({
