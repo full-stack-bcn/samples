@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "node-dev src/server.js"
+    "start": "node src/server.mjs",
+    "dev": "nodemon src/server.mjs"
   },
   "keywords": [
     "todos",
@@ -19,6 +19,6 @@
     "pg": "^8.2.1"
   },
   "devDependencies": {
-    "node-dev": "^4.0.0"
+    "nodemon": "^2.0.4"
   }
 }

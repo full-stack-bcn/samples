@@ -1,15 +1,11 @@
-const { Router } = require("express");
-const db = require("../db");
-const api = Router();
+import express from "express";
+import * as db from "../db.mjs";
 
-const SIMULATED_DELAY = 0;
-const simulatedDelay = () => {
-  return new Promise(resolve => setTimeout(resolve, SIMULATED_DELAY));
-}
+const api = express.Router();
 
 api.get("/todos", async (req, res) => {
+  console.log("/todos");
   try {
-    await simulatedDelay();
     const { rows } = await db.query({
       text: `SELECT * FROM todos`,
     });
@@ -21,7 +17,6 @@ api.get("/todos", async (req, res) => {
 
 api.post("/todos", async (req, res) => {
   try {
-    await simulatedDelay();
     const { rows } = await db.query({
       text: `
         INSERT INTO todos (text) 
@@ -38,7 +33,6 @@ api.post("/todos", async (req, res) => {
 
 api.put("/todos/:id", async (req, res) => {
   try {
-    await simulatedDelay();
     const todo = req.body;
     const { rows } = await db.query({
       text: `
@@ -56,7 +50,6 @@ api.put("/todos/:id", async (req, res) => {
 
 api.delete("/todos", async (req, res) => {
   try {
-    await simulatedDelay();
     const { rows } = await db.query({
       text: `
         DELETE FROM todos 
@@ -72,7 +65,6 @@ api.delete("/todos", async (req, res) => {
 
 api.delete("/todos/:id", async (req, res) => {
   try {
-    await simulatedDelay();
     const { id } = req.params;
     const { rows } = await db.query({
       text: `
@@ -87,4 +79,4 @@ api.delete("/todos/:id", async (req, res) => {
   }
 })
 
-module.exports = api;
+export default api;

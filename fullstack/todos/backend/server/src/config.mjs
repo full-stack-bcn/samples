@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const getVar = (name) => {
   const variable = process.env[name];
@@ -9,10 +10,6 @@ const getVar = (name) => {
   return variable;
 };
 
-const FRONTEND_DIR = getVar("FRONTEND_DIR");
-const PORT = getVar("PORT");
+export const FRONTEND_DIR = getVar("FRONTEND_DIR");
+export const PORT = getVar("PORT");
 
-module.exports = {
-  FRONTEND_DIR,
-  PORT,
-};
