@@ -6,7 +6,11 @@ export const loadTodos = () => async (dispatch, getState, api) => {
   dispatch({ type: types.LOAD_STARTED });
   try {
     const todos = await api.loadTodos();
-    dispatch({ type: types.LOAD_SUCCEEDED, payload: todos });
+    if (todos.error) {
+      dispatch({ type: types.LOAD_FAILED, payload: { error: todos.error } });
+    } else {
+      dispatch({ type: types.LOAD_SUCCEEDED, payload: todos });
+    }
   } catch (e) {
     console.log("Error", e);
     dispatch({ type: types.LOAD_FAILED, payload: { error: e } });
