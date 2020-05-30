@@ -1,4 +1,4 @@
-const { PASSWORD } = require("./config");
+const { PASSWORD, MAX_AGE } = require("./config");
 const express = require("express");
 const routes = express.Router();
 const tokendb = require("./tokendb");
@@ -46,18 +46,12 @@ routes.get("/", (req, res) => {
   res.send(loginPage());
 });
 
-const MILLISECOND = 1;
-const SECOND = 1000 * MILLISECOND;
-const MINUTE = 60 * SECOND;
-const HOUR = 60 * MINUTE;
-
 routes.post("/", (req, res) => {
   const { password } = req.body;
   log("POST /login:", password);
   if (password === PASSWORD) {
-    const maxAge = 12 * SECOND;
-    const token = tokendb.createToken(maxAge);
-    res.cookie("token", token, { maxAge });
+    const token = tokendb.createToken(MAX_AGE);
+    res.cookie("token", token, { maxAge: MAX_AGE });
     res.redirect("/");
   } else {
     res.send(loginPage("Incorrect password"));
