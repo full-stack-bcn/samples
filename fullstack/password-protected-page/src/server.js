@@ -5,17 +5,17 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
 
-const { authMiddleware } = require('./auth');
-
 app.use(cors());
-app.use(cookieParser());
-app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser()); // Parse cookies
+app.use(express.urlencoded({ extended: true })); // Read POST params
 
-// Login page is open
+// Login page is open (auth Middleware redirects here)
 app.use('/login', require('./login'));
 
-// Anything else need authentication
-app.use(authMiddleware);
+// Any routes after this middleware need authentication
+app.use(require('./auth'));
+
+// The password protected site is in the "public" directory
 app.use(express.static('public'));
 
 http.createServer(app).listen(PORT, () => {

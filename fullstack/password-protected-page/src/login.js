@@ -2,6 +2,7 @@ const { PASSWORD } = require("./config");
 const express = require("express");
 const routes = express.Router();
 const tokendb = require("./tokendb");
+const { log } = require("./log");
 
 const loginPage = (message = "") => `
 <html lang="en">
@@ -41,7 +42,7 @@ const loginPage = (message = "") => `
 `;
 
 routes.get("/", (req, res) => {
-  console.log("GET login");
+  log("GET login");
   res.send(loginPage());
 });
 
@@ -52,7 +53,7 @@ const HOUR = 60 * MINUTE;
 
 routes.post("/", (req, res) => {
   const { password } = req.body;
-  console.log("POST /login:", password);
+  log("POST /login:", password);
   if (password === PASSWORD) {
     const maxAge = 12 * SECOND;
     const token = tokendb.createToken(maxAge);

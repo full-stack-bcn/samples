@@ -12,4 +12,5 @@ const getEnvVar = (varName) => {
 module.exports = {
   PORT: getEnvVar("PORT"),
   PASSWORD: getEnvVar("PASSWORD"),
+  LOG: getEnvVar("LOG"),
 };
