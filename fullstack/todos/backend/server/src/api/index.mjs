@@ -26,7 +26,7 @@ api.post("/todos", async (req, res) => {
     });
     res.json(rows[0]);
   } catch (e) {
-    res.json({ error: e.toString() });
+    res.status(500).send(`API Error: ${e.toString()}`)
   }
 });
 
