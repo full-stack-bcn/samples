@@ -1,53 +1,33 @@
-
 const BASE_URL = "http://localhost:8080";
 
-export const loadTodos = async () => {
-  const response = await fetch(`${BASE_URL}/api/todos`);
-  const todos = await response.json();
-  return todos;
+const _call = async (path = "", options) => {
+  const response = await fetch(`${BASE_URL}/api${path}`, options);
+  const result = await response.json();
+  return result;
 };
 
-export const addTodo = async (text) => {
-  const response = await fetch(`${BASE_URL}/api/todos`, {
-    method: "POST",
-    mode: "cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text }),
-  });
-  const addedTodo = response.json();
-  return addedTodo;
+const _mutate = async (method, path, payload) => {
+  let options = { method, mode: "cors" };
+  if (method === "PUT" || method === "POST") {
+    options = {
+      ...options,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    };
+  }
+  return _call(path, options);
 };
 
-export const updateTodo = async (todo) => {
-  const response = await fetch(`${BASE_URL}/api/todos/${todo.id}`, {
-    method: "PUT",
-    mode: "cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(todo),
-  });
-  const updatedTodo = await response.json();
-  return updatedTodo;
-};
+export const loadTodos = async () => _call("/todos");
 
-export const deleteTodo = async (id) => {
-  console.log("Delete", id);
-  const response = await fetch(`${BASE_URL}/api/todos/${id}`, {
-    method: "DELETE",
-    mode: "cors",
-  });
-  const deletedTodo = await response.json();
-  console.log("Finish delete", deletedTodo);
-  return deletedTodo;
-}
+export const addTodo = async (text) => _mutate("POST", "/todos", { text });
 
-export const clearCompleted = async (text) => {
-  const response = await fetch(`http://localhost:8080/api/todos`, {
-    method: "DELETE",
-    mode: "cors",
-  });
-  const deletedTodos = await response.json();
-  return deletedTodos;
-};
+export const updateTodo = async (todo) =>
+  _mutate("PUT", `/todos/${todo.id}`, todo);
+
+export const deleteTodo = async (id) => _mutate("DELETE", `/todos/${id}`);
+
+export const clearCompleted = async () => _mutate("DELETE", "/todos");
 
 export default {
   loadTodos,
