@@ -1,6 +1,6 @@
 const BASE_URL = "http://localhost:8080";
 
-const _call = async (path = "", options) => {
+const _call = async (path, options) => {
   const response = await fetch(`${BASE_URL}/api${path}`, options);
   const result = await response.json();
   return result;
@@ -18,16 +18,11 @@ const _mutate = async (method, path, payload) => {
   return _call(path, options);
 };
 
-export const loadTodos = async () => _call("/todos");
-
-export const addTodo = async (text) => _mutate("POST", "/todos", { text });
-
-export const updateTodo = async (todo) =>
-  _mutate("PUT", `/todos/${todo.id}`, todo);
-
-export const deleteTodo = async (id) => _mutate("DELETE", `/todos/${id}`);
-
-export const clearCompleted = async () => _mutate("DELETE", "/todos");
+export const loadTodos = () => _call("/todos");
+export const addTodo = (text) => _mutate("POST", "/todos", { text });
+export const updateTodo = (todo) => _mutate("PUT", `/todos/${todo.id}`, todo);
+export const deleteTodo = (id) => _mutate("DELETE", `/todos/${id}`);
+export const clearCompleted = () => _mutate("DELETE", "/todos");
 
 export default {
   loadTodos,
