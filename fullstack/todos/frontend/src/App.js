@@ -1,32 +1,29 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { loadTodos } from "./actions/todos";
 import "./App.css";
 import AddTodoForm from "./components/AddTodoForm";
 import TodoList from "./components/TodoList";
 
-class App extends Component {
-  componentDidMount() {
-    this.props.loadTodos();
-  }
+const useLoadTodos = () => {
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(loadTodos()));
+};
 
-  render() {
-    return (
-      <>
-        <header>
-          <h1>Todos</h1>
-        </header>
-        <main>
-          <AddTodoForm />
-          <TodoList />
-        </main>
-      </>
-    );
-  }
-}
+const App = () => {
+  useLoadTodos();
 
-const mapDispatchToProps = (dispatch) => ({
-  loadTodos: () => dispatch(loadTodos()),
-});
+  return (
+    <>
+      <header>
+        <h1>Todos</h1>
+      </header>
+      <main>
+        <AddTodoForm />
+        <TodoList />
+      </main>
+    </>
+  );
+};
 
-export default connect(null, mapDispatchToProps)(App);
+export default App;

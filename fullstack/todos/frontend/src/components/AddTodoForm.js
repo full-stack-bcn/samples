@@ -1,52 +1,47 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo, clearCompleted } from "../actions/todos";
 import "./AddTodoForm.css";
-import { connect } from "react-redux";
-import { addTodo } from "../actions/todos";
-import { clearCompleted } from "../actions/todos";
 
-class AddTodoForm extends Component {
-  constructor() {
-    super();
-    this.state = { text: "" };
-  }
+const useAddTodo = () => {
+  const dispatch = useDispatch();
+  return [(text) => dispatch(addTodo(text))];
+};
 
-  onChange = (e) => this.setState({ text: e.target.value });
+const useClearCompleted = () => {
+  const dispatch = useDispatch();
+  return [() => dispatch(clearCompleted())];
+};
 
-  onSubmit = (e) => {
+const AddTodoForm = () => {
+  const [text, setText] = useState("");
+  const [addTodo] = useAddTodo();
+  const [clearCompleted] = useClearCompleted();
+
+  const onSubmit = (e) => {
     e.preventDefault();
-    if (this.state.text) {
-      this.props.addTodo(this.state.text);
-      this.setState({ text: "" });
+    if (text) {
+      addTodo(text);
+      setText("");
     }
   };
 
-  render() {
-    return (
-      <form onSubmit={this.onSubmit}>
-        <p>
-          <input
-            type="text"
-            name="text"
-            value={this.state.text}
-            onChange={this.onChange}
-          />
-          <input type="submit" value="Add Todo" />
-        </p>
-        <p>
-          <input
-            type="button"
-            value="Clear Completed"
-            onClick={this.props.clearCompleted}
-          />
-        </p>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={onSubmit}>
+      <p>
+        <input
+          type="text"
+          name="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <input type="submit" value="Add Todo" />
+      </p>
+      <p>
+        <input type="button" value="Clear Completed" onClick={clearCompleted} />
+      </p>
+    </form>
+  );
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  addTodo: (text) => dispatch(addTodo(text)),
-  clearCompleted: () => dispatch(clearCompleted()),
-});
-
-export default connect(null, mapDispatchToProps)(AddTodoForm);
+export default AddTodoForm;
