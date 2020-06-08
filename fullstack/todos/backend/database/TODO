@@ -1,0 +1,1 @@
+- Do not require the user to have the Postgres client installed on the host.
