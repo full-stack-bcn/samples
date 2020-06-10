@@ -1,6 +1,6 @@
 import firebase from "@firebase/app";
 import React, { useContext } from "react";
-import { useCollection, useDocument } from "react-firebase-hooks/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 import UserContext from "../UserContext";
 import Link from "./Link";
 import "./LinkList.css";
@@ -17,7 +17,7 @@ const Links = ({ links }) => {
 
 const LinksWithVotes = ({ links }) => {
   const { user } = useContext(UserContext);
-  const [votes, loadingVotes /*, errorVotes*/] = useDocument(
+  const [votes, loadingVotes /*, errorVotes*/] = useCollection(
     firebase.firestore().collection(`/users/${user}/votes`)
   );
   const linksWithVotes = links.docs.map((linkDoc) => {
