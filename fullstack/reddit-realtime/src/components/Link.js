@@ -46,12 +46,12 @@ function Link({ id, url, by, votes, loading, upvoted }) {
           <span className="stats">
             {votes} vote{votes === 1 ? "" : "s"}
           </span>
+          {by && <span className="by">by {by}</span>}
           {user && upvoted && (
             <span className="unvote" onClick={unvote}>
               unvote
             </span>
           )}
-          {by && <span className="by">by {by}</span>}
         </div>
       </div>
     </div>
