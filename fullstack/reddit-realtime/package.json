@@ -1,18 +1,18 @@
 {
-  "name": "frontend",
+  "name": "reddit-realtime",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/analytics": "^0.3.6",
+    "@firebase/app": "^0.6.5",
+    "@firebase/firestore": "^1.15.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "immer": "^6.0.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-scripts": "3.4.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "react-firebase-hooks": "^2.2.0",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

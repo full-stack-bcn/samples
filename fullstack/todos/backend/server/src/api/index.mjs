@@ -43,7 +43,7 @@ api.put("/todos/:id", async (req, res) => {
     });
     res.json(rows[0]);
   } catch (e) {
-    res.json({ error: e.toString() });
+    res.status(500).send(`API Error: ${e.toString()}`);
   }
 });
 
@@ -58,7 +58,7 @@ api.delete("/todos", async (req, res) => {
     });
     res.json(rows);
   } catch (e) {
-    res.json({ error: e.toString() });
+    res.status(500).send(`API Error: ${e.toString()}`);
   }
 });
 
@@ -74,7 +74,7 @@ api.delete("/todos/:id", async (req, res) => {
     });
     res.json(rows[0]);
   } catch (e) {
-    res.json({ error: e.toString() });
+    res.status(500).send(`API Error: ${e.toString()}`);
   }
 })
 

@@ -1,0 +1,16 @@
+.addlink {
+  margin: 0.6rem;
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: #e9edf7;
+  border: 1px solid #eee;
+}
+.addlink p {
+  margin: 0;
+}
+.addlink input {
+  width: 35rem;
+}
+.addlink button {
+  margin-top: 0.3rem;
+}

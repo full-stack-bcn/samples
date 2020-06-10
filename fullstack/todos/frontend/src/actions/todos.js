@@ -2,6 +2,10 @@ import types from "./types";
 
 import { v4 as uuidv4 } from "uuid";
 
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
 export const loadTodos = () => async (dispatch, getState, api) => {
   dispatch({ type: types.LOAD_STARTED });
   try {
