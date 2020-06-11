@@ -7,29 +7,24 @@ import firebase from "@firebase/app";
 function Link({ id, url, by, votes, loading, upvoted }) {
   const { user } = useContext(UserContext);
 
-  const vote = () => {
+  const _vote = (positive) => () => {
     const db = firebase.firestore();
     const linkRef = db.doc(`/reddit/${id}`);
     const voteRef = db.doc(`/users/${user}/votes/${id}`);
     db.runTransaction(async (tx) => {
       const doc = await tx.get(linkRef);
-      var newVotes = doc.data().votes + 1;
+      var newVotes = doc.data().votes + (positive ? 1 : -1);
       tx.update(linkRef, { votes: newVotes });
-      tx.set(voteRef, {});
+      if (positive) {
+        tx.set(voteRef, {});
+      } else {
+        tx.delete(voteRef);
+      }
     });
   };
 
-  const unvote = () => {
-    const db = firebase.firestore();
-    const linkRef = db.doc(`/reddit/${id}`);
-    const voteRef = db.doc(`/users/${user}/votes/${id}`);
-    db.runTransaction(async (tx) => {
-      const doc = await tx.get(linkRef);
-      var newVotes = doc.data().votes - 1;
-      tx.update(linkRef, { votes: newVotes });
-      tx.delete(voteRef);
-    });
-  };
+  const vote = _vote(true);
+  const unvote = _vote(false);
 
   return (
     <div className="link">
