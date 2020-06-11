@@ -11,12 +11,11 @@ function Link({ id, url, by, votes, loading, upvoted }) {
     const db = firebase.firestore();
     const linkRef = db.doc(`/reddit/${id}`);
     const voteRef = db.doc(`/users/${user}/votes/${id}`);
-    db.runTransaction(function (tx) {
-      return tx.get(linkRef).then(function (doc) {
-        var newVotes = doc.data().votes + 1;
-        tx.update(linkRef, { votes: newVotes });
-        tx.set(voteRef, {});
-      });
+    db.runTransaction(async (tx) => {
+      const doc = await tx.get(linkRef);
+      var newVotes = doc.data().votes + 1;
+      tx.update(linkRef, { votes: newVotes });
+      tx.set(voteRef, {});
     });
   };
 
@@ -24,12 +23,11 @@ function Link({ id, url, by, votes, loading, upvoted }) {
     const db = firebase.firestore();
     const linkRef = db.doc(`/reddit/${id}`);
     const voteRef = db.doc(`/users/${user}/votes/${id}`);
-    db.runTransaction(function (tx) {
-      return tx.get(linkRef).then(function (doc) {
-        var newVotes = doc.data().votes - 1;
-        tx.update(linkRef, { votes: newVotes });
-        tx.delete(voteRef);
-      });
+    db.runTransaction(async (tx) => {
+      const doc = await tx.get(linkRef);
+      var newVotes = doc.data().votes - 1;
+      tx.update(linkRef, { votes: newVotes });
+      tx.delete(voteRef);
     });
   };
 
