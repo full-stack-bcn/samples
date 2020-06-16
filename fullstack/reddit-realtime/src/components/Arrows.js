@@ -10,8 +10,5 @@ export function UpArrow({ onClick }) {
 }
 
 export function NoArrow() {
-  return (
-    <div className="arrow">
-    </div>
-  );
+  return <div className="arrow"></div>;
 }

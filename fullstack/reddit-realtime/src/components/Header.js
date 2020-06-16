@@ -2,47 +2,59 @@ import React, { useContext, useState, useRef } from "react";
 import "./Header.css";
 import UserContext from "../UserContext";
 
-function Header() {
+const _prevDef = (fn) => (e) => {
+  e.preventDefault();
+  fn();
+};
+
+const Logout = ({ user, onClick }) => {
+  return (
+    <div>
+      {user}
+      <span className="separator"></span>
+      <a onClick={_prevDef(onClick)} href="#logout">
+        logout
+      </a>
+    </div>
+  );
+};
+
+const Login = ({ onClick }) => {
+  return (
+    <a href="#login" onClick={_prevDef(onClick)}>
+      login
+    </a>
+  );
+};
+
+const LoginForm = ({ onLogin }) => {
+  const ref = useRef(null);
+  return (
+    <form onSubmit={_prevDef(() => onLogin(ref.current.value))}>
+      <input type="text" ref={ref} />
+      <button>login</button>
+    </form>
+  );
+};
+
+const Header = () => {
   const { user, setUser } = useContext(UserContext);
-  const [showForm, setShowForm] = useState(false);
-  const userRef = useRef(null);
+  const [loginForm, showLoginForm] = useState(false);
 
-  const _prevDef = (fn) => (e) => {
-    e.preventDefault();
-    fn();
-  };
-
-  const clickLogin = () => setShowForm(true);
-  const doLogin = () => {
-    setUser(userRef.current.value);
-    setShowForm(false);
-  }
+  const clickLogin = () => showLoginForm(true);
   const doLogout = () => setUser(null);
+  const doLogin = (user) => {
+    setUser(user);
+    showLoginForm(false);
+  };
 
   let login;
   if (user) {
-    login = (
-      <div>
-        {user}
-        <span className="separator"></span>
-        <a onClick={_prevDef(doLogout)} href="#logout">
-          logout
-        </a>
-      </div>
-    );
-  } else if (showForm) {
-    login = (
-      <form onSubmit={_prevDef(doLogin)}>
-        <input type="text" ref={userRef} />
-        <button>login</button>
-      </form>
-    );
+    login = <Logout user={user} onClick={doLogout} />;
+  } else if (loginForm) {
+    login = <LoginForm onLogin={doLogin} />;
   } else {
-    login = (
-      <a href="#login" onClick={_prevDef(clickLogin)}>
-        login
-      </a>
-    );
+    login = <Login onClick={clickLogin} />;
   }
 
   return (
@@ -54,6 +66,6 @@ function Header() {
       {login}
     </header>
   );
-}
+};
 
 export default Header;

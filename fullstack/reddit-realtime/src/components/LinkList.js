@@ -20,15 +20,14 @@ const LinksWithVotes = ({ links }) => {
   const [votes, loadingVotes /*, errorVotes*/] = useCollection(
     firebase.firestore().collection(`/users/${user}/votes`)
   );
+  
   const linksWithVotes = links.docs.map((linkDoc) => {
     const link = linkDoc.data();
     link.id = linkDoc.id;
     link.loading = loadingVotes;
     if (votes) {
-      const i = votes.docs.findIndex((voteDoc) => {
-        return voteDoc.id === link.id;
-      });
-      const voteFound = i !== -1;
+      const i = votes.docs.findIndex((voteDoc) => voteDoc.id === link.id);
+      const voteFound = -1 !== i;
       if (voteFound) {
         link.upvoted = true;
       }
