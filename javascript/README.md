@@ -16,7 +16,7 @@ Short samples about Javascript concepts:
 1. [Maps](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/maps)
 1. [Sets](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/sets)
 1. [Dates](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/dates)
-1. [CommonJS Modules](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/commonjs-modules)
+1. [CommonJS Modules](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/modules-commonjs)
 1. [Asynchronous Javascript](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/async)
 1. [Input/Output](https://github.com/full-stack-bcn/samples/tree/master/javascript/concepts/io)
 
