@@ -1,7 +1,7 @@
-function point2d(x, y) {
+function Point2d(x, y) {
   this.x = x;
   this.y = y;
 }
 
-let p = new point2d(-1, 3);
+let p = new Point2d(-1, 3);
 console.log(p);
