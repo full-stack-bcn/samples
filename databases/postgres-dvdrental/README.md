@@ -14,13 +14,5 @@ Once they're up, restore the data into the database:
 
 To connect to the database:
 ```sh
-export PGHOST=localhost 
-export PGPORT=5432 
-export PGUSER=postgres 
-export PGPASSWORD=postgres 
-export PGDATABASE=dvdrental 
-psql
+./open-db-console.sh
 ```
-
-If you keep the variables in you ``.bashrc`` you will be able to use ``psql``
-directly.
