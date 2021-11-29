@@ -10,22 +10,16 @@ Para los saltos de línea, añade 700 milisegundos extra.
 
 */
 
-const texto = `
-You should know that, professor.
+const WOPR = `You should know that, professor.
 You programmed me.
 `;
 
 const showChar = i => {
   process.stdout.write(WOPR[i]);
-  let delay = 100;
-  if (WOPR[i] === "\n") {
-    delay += 700;
+  let delay = 60 + (WOPR[i] === "\n" ? 700 : 0);
+  if (i + 1 < WOPR.length) {
+    setTimeout(() => showChar(i + 1), delay);
   }
-  setTimeout(() => {
-    if (i + 1 < WOPR.length) {
-      showChar(i + 1);
-    }
-  }, delay);
 };
 
 showChar(0);
