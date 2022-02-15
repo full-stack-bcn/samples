@@ -1,7 +1,7 @@
 
 # Full-stack Web Technology Samples
 
-A repository with samples for single concepts related to full-stack web technologies.
+A repository with samples for single concepts related to full-stack web technologies...
 
 These samples are student material for the [Postgraduate Degree in Full-stack Web Technologies](https://www.talent.upc.edu/cat/estudis/formacio/curs/313400/postgrau-full-stack-web-technologies/).
 
