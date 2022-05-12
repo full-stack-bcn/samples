@@ -2,7 +2,7 @@
 const mongodb = require('mongodb');
 
 const url = "mongodb://admin:fullstack@localhost:27017";
-const client = new mongodb.MongoClient(url);
+const client = new mongodb.MongoClient(url, { useUnifiedTopology: true });
 
 async function main() {
   await client.connect();
