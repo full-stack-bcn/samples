@@ -1,2 +1,2 @@
 #!/bin/sh
-docker exec -it mongodb-airbnb-db-1 mongo -u admin -p fullstack
+docker exec -it mongodb-airbnb-db-1 mongosh -u admin -p fullstack
