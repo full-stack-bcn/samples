@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "Forum API server",
+  "main": "./src/server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon"
+  },
+  "keywords": [
+    "forum",
+    "api"
+  ],
+  "author": "Pau Fernández <pau.fernandez@upc.edu>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3"
+  }
+}
