@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  forums-mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: fullstack
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+volumes:
+  data:
