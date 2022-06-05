@@ -1,10 +1,17 @@
-import './App.css'
+import "./App.css";
+import SearchScreen from "./screens/SearchScreen";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieDetailsScreen from "./screens/MovieDetailsScreen";
 
 function App() {
   return (
-    <div className="App">
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SearchScreen />} />
+        <Route path="/movie/:movieId" element={<MovieDetailsScreen />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
