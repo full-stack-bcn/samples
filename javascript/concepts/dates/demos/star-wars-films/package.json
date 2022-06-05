@@ -2,7 +2,7 @@
   "name": "star-wars-films",
   "version": "0.0.1",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.7"
   },
   "main": "star-wars-films.js"
 }
