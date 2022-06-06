@@ -1,0 +1,78 @@
+
+.centered {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  height: 3em;
+  width: 3em;
+  border-radius: 5em;
+  border: .3em solid lightblue;
+  border-top-color: white;
+  animation: infinite;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: rotate(.25turn);
+}
+@keyframes spin {
+  from { transform: rotate(0turn); }
+  to { transform: rotate(1turn); }
+}
+.movie-list {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 20px;
+  justify-content: center;
+}
+.movie {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #222;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+}
+.movie:hover {
+  transform: scale(1.05);
+}
+.movie .sub {
+  margin-top: .3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.movie .date {
+  color: grey;
+  font-weight: bold;
+  font-size: 110%;
+}
+.movie .title {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #d7d7d7;
+  height: 2.2em;
+}
+.movie .votes {
+  color: rgba(255, 255, 0, 0.722);
+}
+.movie .info {
+  padding: .4em .8em;
+  padding-bottom: .8em;
+}
+.movie .overview {
+  /* https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  font-size: 10pt;
+  color: #aaa;
+  margin-top: .6em;
+}
