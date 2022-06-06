@@ -10,24 +10,11 @@
   justify-content: center;
   padding: 2em;
 }
-.backdrop {
-  width: 300px;
-  height: 150px;
-}
-.backdrop.missing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(255, 255, 255, 0.1);
-}
-.backdrop.missing img {
-  width: 2em;
-  height: 2em;
-}
+
 .search-screen form input[type="text"] {
   width: 40em;
   padding: 0.5em 0.9em;
-  border-radius: .3em;
+  border-radius: 0.3em;
   margin-right: 0.4em;
   font-size: 14pt;
 }
@@ -36,8 +23,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .6em 1.2em;
-  border-radius: .3em;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
   color: white;
   font-weight: bold;
 }

@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovie, getMovieCredits } from "../api";
 import Loading from "../components/Loading";
-import movie_icon from "../components/movie_icon.svg";
 import { CreditList, Movie } from "../types";
 import { getYear } from "../utils";
-import "./MovieDetailsScreen.css";
+import "./DetailsScreen.css";
 
 export default function MovieDetailsScreen() {
   const { movieId } = useParams();
