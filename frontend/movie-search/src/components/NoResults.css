@@ -1,0 +1,10 @@
+.centered {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no-results {
+  font-size: 16pt;
+  color: grey;
+}
