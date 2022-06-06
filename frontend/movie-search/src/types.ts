@@ -15,4 +15,11 @@ export interface Movie {
   genres?: Genre[];
 }
 
+export interface Credit {
+  name: string;
+  character: string;
+  profile: string;
+}
+
+export type CreditList = Credit[] | null;
 export type MovieList = Movie[] | null;

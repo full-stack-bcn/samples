@@ -1,41 +1,27 @@
 .movie-details-screen {
+  position: relative;
   min-height: 100vh;
   color: #eee;
   font-family: Roboto, sans-serif;
+  background-origin: border-box;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: linear-gradient(to top, blue, red);
   background-color: black;
 }
-.big-backdrop {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 50vh;
-  object-fit: cover;
-}
-.gradient {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.9009978991596639) 33%,
-    rgba(0, 0, 0, 0.6208858543417367) 68%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  position: absolute;
-  top: 25vh;
-  height: 25vh;
-  right: 0;
-  left: 0;
-  /* border: 1px solid red; */
-}
 .movie-details-screen .wrapper {
-  position: absolute;
-  top: 40vh;
-  left: 0;
-  right: 0;
+  padding-top: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-image: linear-gradient(
+    transparent 25vh,
+    rgba(0, 0, 0, 0.82) 42vh,
+    rgba(0, 0, 0, 0.96) 46vh,
+    black 50vh
+  );
 }
 .movie-details-screen .poster {
   width: 300px;
@@ -46,6 +32,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-bottom: 2rem;
 }
 .movie-details-screen .header .text {
   display: flex;
@@ -53,6 +40,7 @@
   margin-left: 2rem;
 }
 .movie-details-screen .header .title {
+  margin: 0;
   font-size: 40pt;
   line-height: 42pt;
   font-weight: bold;
@@ -96,4 +84,36 @@
   margin-top: 1.8rem;
   line-height: 18pt;
   color: rgba(255, 255, 255, 0.809);
+}
+.movie-details-screen .actor-list {
+  width: 60em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+.movie-details-screen .actor-list .card {
+  font-size: 10pt;
+  width: 7.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: .3rem;
+  overflow: hidden;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.movie-details-screen .actor-list .card .profile {
+  width: 100%;
+}
+.movie-details-screen .actor-list .card .name {
+  font-size: 105%;
+  font-weight: bold;
+  padding: .2rem .5rem;
+}
+.movie-details-screen .actor-list .card .role {
+  color: #aaa;
+  font-size: 95%;
+  padding: 0 .5rem .2rem;
 }
