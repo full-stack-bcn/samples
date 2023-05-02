@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  mongo:
+    image: mongo
+    container_name: tweets
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: fullstack
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/import-data
+      - db-data:/data/db
+
+volumes:
+  db-data:
