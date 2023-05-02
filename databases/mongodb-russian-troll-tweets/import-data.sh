@@ -5,7 +5,7 @@ set -e
 degit --force fivethirtyeight/russian-troll-tweets data
 
 for i in 1 2 3 4 5; do
-  docker exec russian-tweets \
+  docker exec tweets \
     mongoimport \
       --username admin --password fullstack --authenticationDatabase admin \
       --db russian \
